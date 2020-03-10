@@ -1,0 +1,58 @@
+@media screen and (max-width: 991px) {
+  // footer
+  .footer {
+    &__logo-wrapper {
+      display: none;
+    }
+
+    .footer__list__wrapper {
+      display: block;
+    }
+
+    &__list {
+      margin-left: 0;
+
+      &--pre-logo {
+        margin-right: 0;
+      }
+
+      &--left {
+        margin-right: 0;
+      }
+    }
+
+    &__list__media-r {
+      text-align: right;
+    }
+
+    &__logo--media {
+      display: block;
+      margin-top: 20px;
+    }
+  }
+  // footer end
+
+  // main-info-oil
+  .main-info-oil__wrapper {
+    .main-info-oil__row {
+      .left {
+        margin-right: 150px;
+      }
+
+      .right {
+        margin-left: 150px;
+      }
+    }
+  }
+
+  // main-modal
+  .menu__body {
+    .menu__form {
+      .contact-item {
+        .link {
+          font-size: 35px;
+        }
+      }
+    }
+  }
+}

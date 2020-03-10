@@ -1,0 +1,45 @@
+{% extends 'about/page.html' %}
+{% load static %}
+
+{% block title %}
+{{page.page_name}}
+{% endblock %}
+
+{% block header %}
+{% with page=page %}
+{% include '../page-about.html'  %}
+{% endwith %}
+{% endblock %}
+{% block content %}
+<div style="height: 396px;"></div>
+{% with materials=production page=page %}
+{% include './blocks/materials.html' %}
+{% endwith %}
+{% with z=3 page=page %}
+{% include './blocks/training.html' %}
+{% endwith %}
+{% with z=4 page=page %}
+{% include './blocks/first-press.html' %}
+{% endwith %}
+{% with z=5 page=page %}
+{% include './blocks/clear.html' %}
+{% endwith %}
+{% with z=6 page=page %}
+{% include './blocks/filter.html' %}
+{% endwith %}
+{% with z=7 page=page %}
+{% include './blocks/grade.html' %}
+{% endwith %}
+{% with z=8 page=page %}
+{% include './blocks/vivid-oil.html' %}
+{% endwith %}
+<section class="partner-contact">
+  <div class="business-next-page">
+    <div class="text">Перейти к следующему разделу</div>
+    <a href="/about/oil/" class="button">О масле</a>
+  </div>
+</section>
+{% with contacts=menu_contacts footer_socials=footer_socials %}
+{% include 'footer.html' %}
+{% endwith %}
+{% endblock %}

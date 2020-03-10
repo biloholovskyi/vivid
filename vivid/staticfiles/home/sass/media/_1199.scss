@@ -1,0 +1,25 @@
+@media screen and (max-width: 1199px) {
+  // footer
+  .footer {
+    &__list {
+      margin-left: 0;
+
+      &--pre-logo {
+        margin-right: 0;
+      }
+
+      &--left {
+        margin-right: 0;
+      }
+    }
+
+    .footer__list__wrapper {
+      display: block;
+    }
+
+    .footer__list__media-r {
+      text-align: right;
+    }
+  }
+  // footer end
+}

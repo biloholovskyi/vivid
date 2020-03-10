@@ -1,0 +1,146 @@
+.menu {
+  z-index: 500;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow: auto;
+  transition: all .3s;
+  opacity: 0;
+  display: none;
+
+  &--show {
+    opacity: 1;
+  }
+
+  &__header {
+    height: 87px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 48px;
+
+    .menu__close {
+      display: flex;
+      align-items: center;
+      
+      &:hover {
+        cursor: pointer;
+      }
+
+      .icon {
+        width: 24px;
+        min-width: 24px;
+        height: 24px;
+        padding-block-start: 18.71px;
+        background-image: url(../media/icon/close.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 16px;
+      }
+
+      .text {
+        letter-spacing: -0.01em;
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+
+    .menu__lang {
+      display: flex;
+
+      .item {
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: -0.01em;
+        color: rgba(34, 34, 34, 0.6);
+        position: relative;
+        margin-right: 24px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &--active {
+          color: $dark;
+
+          &:after {
+            content: "";
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            bottom: -11px;
+            background-color: $chery;
+          }
+        }
+      }
+    }
+  }
+
+  &__body {
+    padding: 20px 0;
+
+    .menu__nav {
+      .item {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 80px;
+        display: block;
+        margin-bottom: 18px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .menu__form {
+      .contact-item {
+        margin-bottom: 48px;
+
+        .link {
+          font-size: 40px;
+          line-height: 56px;
+          letter-spacing: -0.02em;
+          margin-bottom: 8px;
+        }
+
+        .desc {
+          line-height: 24px;
+          font-weight: 300;
+          letter-spacing: 0.01em;
+        }
+      }
+
+      .block-form {
+        padding: 0;
+
+        .main-title {
+          font-weight: normal;
+          font-size: 40px;
+          line-height: 56px;
+          letter-spacing: -0.02em;
+          text-align: left;
+          margin-bottom: 24px;
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          .red-button {
+            padding: 12px 24px 13px 24px;
+            font-size: 14px;
+            line-height: 17px;
+            margin: 16px 0 0 0;
+          }
+        }
+      }
+    }
+  }
+}

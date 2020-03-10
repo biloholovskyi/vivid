@@ -1,0 +1,64 @@
+.news-in-main {
+  position: relative;
+
+  .vacancy__list {
+    display: none;
+    max-height: calc(100vh - 128px);
+    overflow: auto;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+
+    &::-webkit-scrollbar { width: 0; }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .show {
+    display: block;
+  }
+
+  .item-news {
+    width: 100%;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+
+    .text {
+      width: 100%;
+      margin-right: 40px;
+
+      &__title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 15px;
+      }
+
+      &__desc {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.01em;
+        color: #767676;
+      }
+    }
+
+    .img {
+      width: 170px;
+      min-width: 170px;
+      height: 170px;
+      object-position: center;
+      object-fit: cover;
+
+      img {
+        width: 170px;
+        min-width: 170px;
+        height: 170px;
+        object-position: center;
+        object-fit: cover;
+      }
+    }
+  }
+}

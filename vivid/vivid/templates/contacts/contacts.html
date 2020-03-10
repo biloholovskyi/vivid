@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+<section class="content-card">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="main-title">Контакты</h3>
+      </div>
+    </div>
+  </div>
+  <div class="card-wrapper">
+    <div class="container">
+      <div class="row">
+        {% if contacts_cards %}
+        {% for card in contacts_cards %}
+        <div class="col-6">
+          {% if card.status == 'main' %}
+          <div class="card-box card-box--no-img">
+            {% else %}
+            <div class="card-box card-box--no-img card-box--other">
+              {% endif %}
+              <div class="card-box__title">{{card.card_title}}</div>
+              {% for c in card.card_contacts.all %}
+              <div class="card-box__contact">
+                {% if c.status == 'link' %}
+                <a href="{{c.link}}" target="_blank" class="contact">{{c.name|safe}}</a>
+                {% else %}
+                <div class="contact">{{c.name|safe}}</div>
+                {% endif %}
+                <div class="name">{{c.desc|safe}}</div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+          {% else %}
+          {% endif %}
+          <div class="col-6">
+            <div class="card-box card-box--no-img card-box--dark">
+              <div class="card-box__title">Остались вопросы?</div>
+              <div class="card-box__text">Напишите нам</div>
+              <div class="red-button main-modal-show">Задать вопрос</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% with contacts=menu_contacts footer_socials=footer_socials footer_contacts=footer_contacts %}
+{% include 'footer.html' %}
+{% endwith %}
+{% endblock %}

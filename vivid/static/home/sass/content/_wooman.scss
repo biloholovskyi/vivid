@@ -1,0 +1,35 @@
+.woman {
+  background: #F1F1F1;
+
+  .main-title {
+    margin-bottom: 40px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 29px;
+      height: 29px;
+      top: 89px;
+      left: -53px;
+      background-image: url(../media/icon/quest.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  &__img {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{% load static %}
+
+{% if bg %}
+<section class="advantages" style="position: relative; background-color: #fff; z-index: {{z}}">
+{% else %}
+<section class="advantages" style="position: relative; z-index: {{z}}">
+{% endif %}
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="main-title">Преимущества</h3>
+      </div>
+    </div>
+    <div class="row">
+      {% if adv %}
+      {% for a in adv %}
+      <div class="col-4">
+        <div class="item">
+          <div class="icon" style="background-image: url(/media/{{a.img}})"></div>
+          <div class="name">{{a.name}}</div>
+          <div class="desc">{{a.desc}}</div>
+        </div>
+      </div>
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>

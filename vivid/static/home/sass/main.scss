@@ -1,0 +1,92 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  color: #222;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: Inter;
+}
+
+a,
+a:hover,
+a:focus,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1202px;
+  }
+}
+
+/*settings*/
+@import "fonts";
+@import "var";
+@import "preloader";
+
+/*over use blocks*/
+@import "header";
+@import "footer";
+@import "menu";
+@import "main-modal";
+@import "sticky-wrapper";
+
+/*pages and block*/
+@import "content/content-card";
+@import "block/reports";
+@import "content/main-box-wrapper";
+@import "content/geography";
+@import "content/advantages";
+@import "content/awards";
+@import "content/partner-contact";
+@import "content/retail-slider";
+@import "content/ctm";
+@import "content/presentation";
+@import "content/block-from";
+@import "content/wooman";
+@import "content/recipes";
+@import "page/news";
+@import "page/article";
+@import "content/oil-oil";
+@import "content/cold-pressed";
+@import "content/choice";
+@import "content/proof";
+@import "content/myth";
+@import "content/materials";
+@import "content/training";
+@import "content/first-press";
+@import "content/clear";
+@import "content/team";
+@import "content/advantages-slider";
+@import "content/vacancy";
+@import "content/vac-modal";
+@import "content/main-section";
+@import "content/news-in-main";
+@import "content/production-main";
+@import "content/main-info-oil";
+
+/*media*/
+@import "media/1199";
+@import "media/991";
+@import "media/767";
+@import "media/575";
+@import "media/360";
+// height
+@import 'media/h880';

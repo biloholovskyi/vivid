@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{page.page_name}}
+{% endblock %}
+
+{% block header %}
+{% with page=article %}
+{% include './head.html'  %}
+{% endwith %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <section class="article">{{article.text|safe}}</section>
+      <div class="article__share">
+        <div class="title">Поделитесь новостью</div>
+        <div class="icon-wrapper">
+          <a href="#" class="item instagram"></a>
+          <a href="https://twitter.com/share?url=https://localhost:3000/{{ request.path }}"
+             class="item twitter"
+             target="popup"
+             onclick="window.open('https://twitter.com/share?url=https://localhost:3000/{{ request.path }}', '', 'height=300,width=600'); return false;"></a>
+          <a href="#" class="item youtube"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="other-news">
+  <div class="news__wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="head-block">
+            <div class="title">Другие новости из этой рубрики</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        {% if article.category == 'Свежие акции' %}
+        {% for art in stocks %}
+        <div class="col-4">
+          <a href="{% url 'news:article' art.id %}">
+            <div class="news__item">
+              <picture class="photo">
+                <source type="image/img+svg" srcset="/media/{{art.photo}}">
+                <img src="/media/{{art.photo}}" alt="{{art.title}}">
+              </picture>
+              <div class="desc">{{art.small_desc}}</div>
+              <div class="date">{{art.date_start|date:"d"}}-{{art.date|date:"d F, Y"}}</div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+        {% elif article.category == 'Новости компании' %}
+        {% for art in company %}
+        <div class="col-4">
+          <a href="{% url 'news:article' art.id %}">
+            <div class="news__item">
+              <picture class="photo">
+                <source type="image/img+svg" srcset="/media/{{art.photo}}">
+                <img src="/media/{{art.photo}}" alt="{{art.title}}">
+              </picture>
+              <div class="desc">{{art.small_desc}}</div>
+              <div class="date">{{art.date|date:"d F, Y"}}</div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+        {% elif article.category == 'Пресса о нас' %}
+        {% for art in smi %}
+        <div class="col-4">
+          <a href="{% url 'news:article' art.id %}">
+            <div class="news__item">
+              <picture class="photo">
+                <source type="image/img+svg" srcset="/media/{{art.photo}}">
+                <img src="/media/{{art.photo}}" alt="{{art.title}}">
+              </picture>
+              <div class="desc">{{art.small_desc}}</div>
+              <div class="date">{{art.date|date:"d F, Y"}}</div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% with contacts=menu_contacts footer_socials=footer_socials footer_contacts=footer_contacts %}
+{% include 'footer.html' %}
+{% endwith %}
+{% endblock %}

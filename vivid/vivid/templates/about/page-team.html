@@ -1,0 +1,36 @@
+{% extends 'business/page.html' %}
+{% load static %}
+
+{% block title %}
+{{page.page_name}}
+{% endblock %}
+
+{% block header %}
+{% with page=page %}
+{% include './header-team.html'  %}
+{% endwith %}
+{% endblock %}
+
+{% block content %}
+<div style="height: 396px;"></div>
+<section class="team">
+  <div class="container">
+    <div class="row">
+      {% for t in team %}
+      <div class="col-3">
+        <div class="item" style="background-image: url(/media/{{t.photo}});">
+          <div class="item__hover">
+            <div class="name">{{t.name}}</div>
+            <div class="post">{{t.post}}</div>
+            <a href="mailto:{{t.mail}}" class="link">{{t.mail}}</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% with contacts=menu_contacts footer_socials=footer_socials %}
+{% include 'footer.html' %}
+{% endwith %}
+{% endblock %}

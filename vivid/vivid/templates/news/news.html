@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Новости{% endblock %}
+
+{% block content %}
+<section class="news">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="main-title">Новости</h3>
+      </div>
+    </div>
+  </div>
+  <div class="news__wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="head-block">
+            <div class="title">Свежие акции</div>
+            <a href="./stocks/" class="all">Все акции</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        {% if stocks %}
+        {% for article in stocks %}
+        <div class="col-4">
+          <a href="{% url 'news:article' article.id %}">
+            <div class="news__item">
+              <picture class="photo">
+                <source type="image/img+svg" srcset="/media/{{article.photo}}">
+                <img src="/media/{{article.photo}}" alt="{{article.title}}">
+              </picture>
+              <div class="desc">{{article.small_desc}}</div>
+              <div class="date">{{article.date_start|date:"d"}}-{{article.date|date:"d F, Y"}}</div>
+            </div>
+          </a>
+
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="news__wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="head-block">
+            <div class="title">Новости компании</div>
+            <a href="./company/" class="all">Смотреть все</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        {% if company %}
+        {% for article in company %}
+        <div class="col-4">
+          <a href="{% url 'news:article' article.id %}">
+            {% if forloop.counter <= 3 %}
+            <div class="news__item news__item--mb">
+              {% else %}
+              <div class="news__item">
+              {% endif %}
+              <picture class="photo">
+                <source type="image/img+svg" srcset="/media/{{article.photo}}">
+                <img src="/media/{{article.photo}}" alt="{{article.title}}">
+              </picture>
+              <div class="desc">{{article.small_desc}}</div>
+              <div class="date">{{article.date|date:"d F, Y"}}</div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="news__wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="head-block">
+            <div class="title">Пресса о нас</div>
+            <a href="./smi/" class="all">Смотреть все</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        {% if smi %}
+        {% for article in smi %}
+        <div class="col-4">
+          <a href="{% url 'news:article' article.id %}">
+            <div class="news__item">
+              <picture class="photo">
+                <source type="image/img+svg" srcset="/media/{{article.photo}}">
+                <img src="/media/{{article.photo}}" alt="{{article.title}}">
+              </picture>
+              <div class="desc">{{article.small_desc}}</div>
+              <div class="date">{{article.date|date:"d F, Y"}}</div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% with contacts=menu_contacts footer_socials=footer_socials footer_contacts=footer_contacts %}
+{% include 'footer.html' %}
+{% endwith %}
+{% endblock %}

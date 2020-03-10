@@ -1,0 +1,27 @@
+.clear {
+  background: #F1F1F1;
+
+  .pre-title {
+    font-size: 18px;
+    line-height: 36px;
+    margin-top: 16px;
+  }
+
+  .main-title {
+    padding-top: 38px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 28px;
+    color: #767676;
+    margin-bottom: 32px;
+  }
+}

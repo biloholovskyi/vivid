@@ -1,0 +1,27 @@
+<div class="header__wrapper header__wrapper--news" style="background-image: url(/media/{{page.banner}}); position: relative;">
+  <header class="header header--page">
+    <div class="header__menu">
+      <div class="icon"></div>
+      <div class="name">Меню</div>
+    </div>
+    <a href="/" class="header__logo"></a>
+    <div class="red-button red-button--transparent">Написать нам</div>
+  </header>
+  <div class="title__wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          {% if page.category == 'Свежие акции' %}
+          <div class="bread-crumb"><span><a href="/news/">Новости</a></span> / <span><a href="/news/stocks">{{page.category}}</a></span> / {{page.title}}</div>
+          {% elif page.category == 'Новости компании' %}
+          <div class="bread-crumb"><span><a href="/news/">Новости</a></span> / <span><a href="/news/company">{{page.category}}</a></span> / {{page.title}}</div>
+          {% elif page.category == 'Пресса о нас' %}
+          <div class="bread-crumb"><span><a href="/news/">Новости</a></span> / <span><a href="/news/smi">{{page.category}}</a></span> / {{page.title}}</div>
+          {% endif %}
+          <h1 class="page-title">{{page.title}}</h1>
+          <div class="page-date">{{page.date|date:"d F, Y"}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

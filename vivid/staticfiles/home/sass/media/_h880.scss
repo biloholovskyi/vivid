@@ -1,0 +1,17 @@
+@media screen and (max-height: 880px) {
+  .menu__body {
+    .menu__form {
+      .contact-item {
+        margin-bottom: 15px;
+      }
+
+      .block-form {
+        form {
+          input {
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+}

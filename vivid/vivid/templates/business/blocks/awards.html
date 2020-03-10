@@ -1,0 +1,32 @@
+<section class="awards">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="main-title">Наши награды</h3>
+      </div>
+    </div>
+  </div>
+  <div class="awards__slider" data-count="1">
+    {% if awards %}
+    {% for aw in awards %}
+    <div class="item">
+      <picture class="icon">
+        <source type="image/img+svg" srcset="/media/{{aw.img}}">
+        <img src="/media/{{aw.img}}" alt="{{aw.name}}">
+      </picture>
+      <div class="text">{{aw.desc|safe}}</div>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+  <div class="awards__nav slider-nav">
+    <div class="prev disabled"></div>
+    <div class="timeline">
+      <div class="item item--active"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <div class="next"></div>
+  </div>
+</section>

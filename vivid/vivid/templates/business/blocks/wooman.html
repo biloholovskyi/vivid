@@ -1,0 +1,20 @@
+<section class="woman sticky-wrapper" style="z-index: {{z}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="sticky-wrapper__box">
+          <div class="sticky-wrapper__box__content">
+            <div class="main-title" style="padding-top: 148px;">{{page.text|safe}}</div>
+            <div class="woman__name">— {{page.name}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6" style="margin-top: 148px; margin-bottom: 120px;">
+        <picture class="woman__img">
+          <source type="image/" srcset="/media/{{page.photo}}">
+          <img src="/media/{{page.photo}}" alt="logo">
+        </picture>
+      </div>
+    </div>
+  </div>
+</section>

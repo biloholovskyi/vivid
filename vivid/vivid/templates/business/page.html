@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{page.page_name}}
+{% endblock %}
+
+{% block header %}
+{% with page=page %}
+{% include '../page-head.html'  %}
+{% endwith %}
+{% endblock %}
+
+{% block content %}
+Контент
+{% endblock %}

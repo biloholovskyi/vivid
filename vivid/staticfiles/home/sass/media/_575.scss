@@ -1,0 +1,15 @@
+@media screen and (max-width: 575px) {
+  // header
+  .header {
+    .red-button {
+      display: none;
+    }
+
+    &__logo {
+      margin-left: 0;
+      left: auto;
+      right: 48px;
+    }
+  }
+  // header end
+}

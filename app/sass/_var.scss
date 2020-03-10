@@ -1,0 +1,28 @@
+$mainDark: #222;
+$dark: #333;
+$chery: #EF3E42;
+
+.red-button {
+  padding: 12.5px 16px 13.33px 15px;
+  background-color: $chery;
+  border-radius: 100px;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.main-title {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 80px;
+}
+
+.padding-0 {
+  padding-left: 0;
+  padding-right: 0;
+}

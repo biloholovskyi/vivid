@@ -1,0 +1,61 @@
+{% load static %}
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-6 col-md-3 col-lg-2">
+        <div class="footer__list footer__list__media--left">
+          <div class="footer__list__title">Мы рядом</div>
+          {% for social in footer_socials %}
+          <a href="{{social.link}}" target="_blank" class="footer__list__link">{{social.name}}</a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+        <div class="footer__list__wrapper">
+          <div class="footer__list footer__list--pre-logo footer__list__media--right">
+            <div class="footer__list__title">Контакты</div>
+            {% for contact in footer_contacts %}
+            <a href="{{contact.link}}" target="_blank" class="footer__list__link">{{contact.name}}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="col-2 padding-0 footer__logo-wrapper">
+        <div class="footer__logo">
+          <a href="/" class="logo"></a>
+          <div class="coop">(c)&nbsp;2005-2019,&nbsp;ООО&nbsp;"ВИВИД"</div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-2">
+        <div class="footer__list footer__list--w62 footer__list__media-r footer__list__media--left">
+          <div class="footer__list__title">Компания</div>
+          <a href="/about/oil/" class="footer__list__link">О масле</a>
+          <a href="/about/career/" class="footer__list__link">Вакансии</a>
+          <a href="/about/production/" class="footer__list__link">Производство</a>
+          <a href="/about/team/" class="footer__list__link">Команда</a>
+        </div>
+      </div>
+      <div class="col-6 col-sm-6 col-md-3 col-lg-2 offset-xl-1">
+        <div class="footer__list__wrapper">
+          <div class="footer__list footer__list--left footer__list__media-r footer__list__media--right">
+            <div class="footer__list__title">Бизнесу</div>
+            <a href="/business/retail" class="footer__list__link">Розница</a>
+            <a href="/business/restaurant" class="footer__list__link">HoReCa</a>
+            <a href="/business/partner" class="footer__list__link">Партнерам</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="footer__logo footer__logo--media">
+        <a href="/" class="logo"></a>
+        <div class="coop">(c)&nbsp;2005-2020,&nbsp;ООО&nbsp;"ВИВИД"</div>
+      </div>
+    </div>
+  </div>
+
+  {% with contacts=contacts %}
+  {% include 'menu.html' %}
+  {% endwith %}
+  {% include 'main-modal.html' %}
+</footer>

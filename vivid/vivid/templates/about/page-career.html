@@ -1,0 +1,78 @@
+{% extends 'business/page.html' %}
+{% load static %}
+
+{% block title %}
+{{page.page_name}}
+{% endblock %}
+
+{% block header %}
+{% with page=page %}
+{% include './header-career.html'  %}
+{% endwith %}
+{% endblock %}
+
+{% block content %}
+<div style="height: 396px;"></div>
+{% with adv=adv %}
+{% include './blocks/advantages.html' %}
+{% endwith %}
+{% with all=all office=office prod=prod %}
+{% include './blocks/vacancy.html' %}
+{% endwith %}
+
+<div class="vac-modal vac-modal__desc">
+  <div class="vac-modal__body">
+    <div class="vac-modal__head">
+      <div class="top">
+        <div class="name">Кладовщик</div>
+        <div class="right">
+          <div class="red-button profile-show">Заполнить анкету</div>
+          <div class="close"></div>
+        </div>
+      </div>
+      <div class="desc"></div>
+    </div>
+    <div class="body">
+      <h3>Описание</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor
+        sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et
+        magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis
+        tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
+      <h3>Требования</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor
+        sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et
+        magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis
+        tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
+      <h3>Обязанности:</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor
+        sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et
+        magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis
+        tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
+    </div>
+  </div>
+</div>
+<div class="vac-profile">
+  <div class="body">
+    <div class="close"></div>
+    <div class="left">
+      <div class="left__title">Заполните свои данные <br>
+        и наши менеджеры свяжутся с вами</div>
+    </div>
+    <div class="right">
+      <form id="vac-profile-form">
+        <input type="text" placeholder="Ваше имя">
+        <input type="text" placeholder="Ваш номер телефона">
+        <input type="email" placeholder="Ваш Email">
+        <div class="button-wrapper">
+          <div class="red-button resume">Прикрепить резюме</div>
+          <button class="red-button" type="submit">Отправить</button>
+        </div>
+        <div class="desc-button">*.PDF, .DOCX, .DOC. Максимальный <br> размер файла - 150 мб</div>
+      </form>
+    </div>
+  </div>
+</div>
+{% with contacts=menu_contacts footer_socials=footer_socials %}
+{% include 'footer.html' %}
+{% endwith %}
+{% endblock %}

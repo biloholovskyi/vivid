@@ -1,0 +1,35 @@
+{% load static %}
+<section class="main-box-wrapper cold-pressed sticky-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="sticky-wrapper__box">
+          <div class="sticky-wrapper__box__content">
+            <h3 class="main-title" style="padding-top: 128px;">{{page.cold_title|safe}}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="cold-pressed__top-text" style="padding-top: 128px;">{{page.cold_text}}</div>
+        <div class="main-box-wrapper__content">
+          <div class="main-box-wrapper__content__imgs">
+            <div class="item" style="padding-top: 80px;">
+              <picture>
+                <source type="image/" srcset="/static/home/media/image/pressed.jpg">
+                <img src="/static/home/media/image/pressed.jpg" alt="img">
+              </picture>
+              <div class="oil-oil__text">{{page.cold_text_1}}</div>
+            </div>
+            <div class="item">
+              <picture>
+                <source type="image/" srcset="/static/home/media/image/img1.jpg">
+                <img src="/static/home/media/image/img1.jpg" alt="img">
+              </picture>
+              <div class="oil-oil__text" style="margin-bottom: 124px;">{{page.cold_text_2}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

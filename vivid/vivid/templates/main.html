@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+VIVID
+{% endblock %}
+
+{% block header %}
+<header class="header header--page">
+  <div class="header__menu">
+    <div class="icon"></div>
+    <div class="name">Меню</div>
+  </div>
+  <a href="/" class="header__logo"></a>
+  <div class="red-button red-button--transparent main-modal-show">Написать нам</div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="main-section block-on-header-style" style="background-image: url(/media/{{settings.banner}});">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="main-section__title">{{settings.title}}</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="main-info-oil">
+  <img src="/static/home/media/image/vivid-2.png" alt="vivid" class="main-info-oil__bottle" id="scroll-bottle">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="main-info-oil__title">VIVID™</h3>
+        <div class="main-info-oil__wrapper">
+          <div class="main-info-oil__row">
+            <div class="left item">
+              <div class="main-info-oil__name">Экологически чистая тара</div>
+              <div class="main-info-oil__desc">Не наносит вреда как организму, так и окружающей среде. Возможность полной переработки тары, после ее использования.</div>
+            </div>
+            <div class="right item">
+              <div class="main-info-oil__name">Эстетика</div>
+              <div class="main-info-oil__desc">Стеклянная тара выглядит более презентабельно и дорого. Идеально подходит под финальные штрихи шеф-повара, публичное декорирование блюд и т.д.</div>
+            </div>
+          </div>
+          <div class="main-info-oil__row">
+            <div class="left item">
+              <div class="main-info-oil__name">Удобный формат</div>
+              <div class="main-info-oil__desc">Малый объем удобен как в использовании, так и с точки зрения транспортировки.</div>
+            </div>
+            <div class="right item">
+              <div class="main-info-oil__name">Премиальное исполнение</div>
+              <div class="main-info-oil__desc">Презентационный формат упаковки.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="production-main">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="main-title">Продукция VIVID™</h3>
+        <div class="production-main__wrapper">
+          {% for p in productions %}
+          <div class="item item--main">
+            <picture class="item unactive">
+              <source type="image/img+svg" srcset="/media/{{p.photo}}">
+              <img src="/media/{{p.photo}}" alt="{{p.title}}">
+            </picture>
+            <picture class="shadow">
+              <source type="image/img+svg" srcset="/static/home/media/icon/shadow.svg">
+              <img src="/static/home/media/icon/shadow.svg" alt="logo">
+            </picture>
+            {% if forloop.counter > 3 %}
+            <div class="item__modal item__modal--left">
+              <div class="close"></div>
+              <div class="text-block">
+                <div class="title">{{p.title}}</div>
+                <div class="text">{{p.desc}}</div>
+              </div>
+            </div>
+            {% else %}
+            <div class="item__modal">
+              <div class="close"></div>
+              <div class="text-block">
+                <div class="title">{{p.title}}</div>
+                <div class="text">{{p.desc}}</div>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% with awards=awards %}
+{% include './business/blocks/awards.html' %}
+{% endwith %}
+
+<section class="vacancy news-in-main section-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <h3 class="main-title">Новости Vivid</h3>
+        <div class="vacancy__list-cat news-cat">
+          <div class="item item--active" id="company">Новости компании</div>
+          <div class="item" id="smi">Пресса о нас</div>
+          <div class="item" id="stocks">Акции</div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="vacancy__list news-company show">
+          {% for a in company %}
+          <div class="item-news">
+            <a href="/news/{{a.id}}" class="text">
+              <div class="text__title">{{a.title}}</div>
+              <div class="text__desc">{{a.small_desc}}</div>
+            </a>
+            <picture class="img">
+              <source type="image/img+svg" srcset="/media/{{a.photo}}">
+              <img src="/media/{{a.photo}}" alt="{{a.title}}">
+            </picture>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="vacancy__list news-smi">
+          {% for a in smi %}
+          <div class="item-news">
+            <a href="/news/{{a.id}}" class="text">
+              <div class="text__title">{{a.title}}</div>
+              <div class="text__desc">{{a.small_desc}}</div>
+            </a>
+            <picture class="img">
+              <source type="image/img+svg" srcset="/media/{{a.photo}}">
+              <img src="/media/{{a.photo}}" alt="{{a.title}}">
+            </picture>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="vacancy__list news-stocks">
+          {% for a in stocks %}
+          <div class="item-news">
+            <a href="/news/{{a.id}}" class="text">
+              <div class="text__title">{{a.title}}</div>
+              <div class="text__desc">{{a.small_desc}}</div>
+            </a>
+            <picture class="img">
+              <source type="image/img+svg" srcset="/media/{{a.photo}}">
+              <img src="/media/{{a.photo}}" alt="{{a.title}}">
+            </picture>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="partner-contact">
+  <div class="business-next-page">
+    <div class="text">Перейти к следующему разделу</div>
+    <a href="/business/" class="button">Бизнес</a>
+  </div>
+</section>
+{% with contacts=menu_contacts footer_socials=footer_socials footer_contacts=footer_contacts %}
+{% include 'footer.html' %}
+{% endwith %}
+{% endblock %}

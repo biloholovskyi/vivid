@@ -1,0 +1,33 @@
+{% extends 'about/page.html' %}
+{% load static %}
+
+{% block title %}
+{{page.page_name}}
+{% endblock %}
+
+{% block header %}
+{% with page=page %}
+{% include '../page-about.html'  %}
+{% endwith %}
+{% endblock %}
+<p>{{ recipes }}</p>
+{% block content %}
+<div style="height: 396px;"></div>
+{% include './blocks/oil.html' %}
+{% include './blocks/cold-pressed.html' %}
+{% include './blocks/choice.html' %}
+{% include './blocks/proof.html' %}
+{% include './blocks/myth.html' %}
+{% with recipes=recipes %}
+{% include '../business/blocks/recipes.html' %}
+{% endwith %}
+<section class="partner-contact">
+  <div class="business-next-page">
+    <div class="text">Перейти к следующему разделу</div>
+    <a href="/about/production/" class="button">Производство</a>
+  </div>
+</section>
+{% with contacts=menu_contacts footer_socials=footer_socials %}
+{% include 'footer.html' %}
+{% endwith %}
+{% endblock %}

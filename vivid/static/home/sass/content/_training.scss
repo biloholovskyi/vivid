@@ -1,0 +1,28 @@
+.training {
+  background: #F1F1F1;
+
+  &__big {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 32px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__big-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  &__big-desc {
+    font-size: 14px;
+    line-height: 28px;
+    color: #767676;
+    margin: 12px 0 56px 0;
+  }
+}

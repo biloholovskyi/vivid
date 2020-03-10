@@ -1,0 +1,84 @@
+{% load static %}
+<section class="geography" style="z-index: {{z}}; display: none !important;">
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <h3 class="main-title" style="margin-top: -160px; padding-top: 160px">География Vivid</h3>
+        <div class="geo-list">
+          <div class="item item--active" data-map="ru">Россия</div>
+          <div class="item" data-map="ch">Китай</div>
+          <div class="item" data-map="uar">ЮАР</div>
+          <div class="item" data-map="canada">Канада</div>
+          <div class="item" data-map="fr">Франция</div>
+          <div class="item" data-map="it">Италия</div>
+        </div>
+      </div>
+      <div class="col-8">
+        <div style="display: flex">
+          <div class="geo-map" style="background-image: url({% static 'home/media/image/map-ru.png' %});">
+            <div class="map-partners map-partners--show" style="top: 10px; right: -110px;" id="ru">
+              {% for c in geo %}
+              {% if c.country == 'ru' %}
+              <picture class="item">
+                <source type="image/img+svg" srcset="/media/{{c.logo}}">
+                <img src="/media/{{c.logo}}" alt="{{c.name}}">
+              </picture>
+              {% endif %}
+              {% endfor %}
+            </div>
+            <div class="map-partners" style="top: 150px; right: -110px;" id="ch">
+              {% for c in geo %}
+              {% if c.country == 'ch' %}
+              <picture class="item">
+                <source type="image/img+svg" srcset="/media/{{c.logo}}">
+                <img src="/media/{{c.logo}}" alt="{{c.name}}">
+              </picture>
+              {% endif %}
+              {% endfor %}
+            </div>
+            <div class="map-partners" style="top: auto; right: 55px; bottom: 115px" id="uar">
+              {% for c in geo %}
+              {% if c.country == 'uar' %}
+              <picture class="item">
+                <source type="image/img+svg" srcset="/media/{{c.logo}}">
+                <img src="/media/{{c.logo}}" alt="{{c.name}}">
+              </picture>
+              {% endif %}
+              {% endfor %}
+            </div>
+            <div class="map-partners" style="top: 60px; right: auto; left: -140px" id="canada">
+              {% for c in geo %}
+              {% if c.country == 'canada' %}
+              <picture class="item">
+                <source type="image/img+svg" srcset="/media/{{c.logo}}">
+                <img src="/media/{{c.logo}}" alt="{{c.name}}">
+              </picture>
+              {% endif %}
+              {% endfor %}
+            </div>
+            <div class="map-partners" style="top: 127px; right: 108px;" id="fr">
+              {% for c in geo %}
+              {% if c.country == 'fr' %}
+              <picture class="item">
+                <source type="image/img+svg" srcset="/media/{{c.logo}}">
+                <img src="/media/{{c.logo}}" alt="{{c.name}}">
+              </picture>
+              {% endif %}
+              {% endfor %}
+            </div>
+            <div class="map-partners" style="top: 135px; right: 89px;" id="it">
+              {% for c in geo %}
+              {% if c.country == 'it' %}
+              <picture class="item">
+                <source type="image/img+svg" srcset="/media/{{c.logo}}">
+                <img src="/media/{{c.logo}}" alt="{{c.name}}">
+              </picture>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,111 @@
+.main-info-oil {
+  padding-top: 264px;
+  padding-bottom: 179px;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: url(../media/image/sunflower.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: contain;
+    width: 287px;
+    height: 243.27px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-image: url(../media/image/sunflower-2.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
+    width: 287px;
+    height: 243.27px;
+  }
+
+  &__bottle {
+    max-width: 236px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    //margin: 0 auto;
+    z-index: 10;
+    position: fixed;
+    margin-left: -118px;
+    left: 50%;
+    top: 350px;
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 180px;
+    line-height: 200px;
+    color: #222222;
+    margin-bottom: 174px;
+  }
+
+  &__wrapper {
+    .main-info-oil__row {
+      display: flex;
+
+      .left {
+        text-align: right;
+        margin-right: 202.5px;
+      }
+
+      .right {
+        text-align: left;
+        margin-left: 202.5px;
+      }
+
+      .item {
+        margin-bottom: 44px;
+        width: 100%;
+
+        .main-info-oil__name {
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 28px;
+          color: #333333;
+          margin-bottom: 15px;
+        }
+
+        .main-info-oil__desc {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0.01em;
+          color: #767676;
+        }
+      }
+    }
+  }
+}
+
+.test {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: red;
+  z-index: 10000000;
+  width: 100%;
+  opacity: .8;
+  //display: none;
+
+  //&::after {
+  //  content: '';
+  //  height: 744px;
+  //  position: absolute;
+  //  width: 100px;
+  //  left: 0;
+  //  bottom: -744px;
+  //  background-color: green;
+  //}
+}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}О компании{% endblock %}
+
+{% block content %}
+<section class="content-card">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="main-title">О компании</h3>
+      </div>
+    </div>
+  </div>
+  <div class="card-wrapper">
+    <div class="container">
+      <div class="row">
+        {% if cards_list %}
+        {% for card in cards_list %}
+        <div class="col-6">
+          <a href="./{{card.card_link}}">
+            <div class="card-box" style="background-image:url(/media/{{card.card_img}});">
+              <div class="card-box__title">{{card.card_title}}</div>
+              <div class="card-box__name">{{card.card_name|safe}}</div>
+              <div class="card-box__desc">{{card.card_desc|safe}}</div>
+              <div class="card-box__link"></div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="recipes">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="main-title">Новости компании</h3>
+        <div class="recipes__slider" data-count="1">
+          <div class="prev disabled"></div>
+          <div class="next"></div>
+          {% if articles %}
+          {% for a in articles %}
+          <a href="{% url 'news:article' a.id %}" class="item">
+            <picture>
+              <source type="image/" srcset="/media/{{a.photo}}">
+              <img src="/media/{{a.photo}}" alt="{{a.title}}">
+            </picture>
+            <div class="desc">{{a.title}}</div>
+            <div class="small-desc">{{a.small_desc}}</div>
+          </a>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% with contacts=menu_contacts footer_socials=footer_socials footer_contacts=footer_contacts %}
+{% include 'footer.html' %}
+{% endwith %}
+{% endblock %}

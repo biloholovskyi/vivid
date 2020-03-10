@@ -1,0 +1,45 @@
+<div class="advantages-slider" data-count="1">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        {% for a in adv %}
+        {% if forloop.first %}
+        <h3 class="main-title main-title--active">{{a.name}}</h3>
+        {% else %}
+        <h3 class="main-title">{{a.name}}</h3>
+        {% endif %}
+        {% endfor %}
+        <div class="adv-slider__nav">
+          <div class="timeline">
+            {% for a in adv %}
+            {% if forloop.first %}
+            <div class="item item--active"></div>
+            {% else %}
+            <div class="item"></div>
+            {% endif %}
+            {% endfor %}
+          </div>
+          <div class="slider-nav">
+            <div class="prev disabled"></div>
+            <div class="next"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        {% for a in adv %}
+        {% if forloop.first %}
+        <picture class="advantages-slider__img advantages-slider__img--active">
+          <source type="image/" srcset="/media/{{a.photo}}">
+          <img src="/media/{{a.photo}}" alt="{{a.name}}">
+        </picture>
+        {% else %}
+        <picture class="advantages-slider__img">
+          <source type="image/" srcset="/media/{{a.photo}}">
+          <img src="/media/{{a.photo}}" alt="img">
+        </picture>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

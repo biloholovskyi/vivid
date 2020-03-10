@@ -1,0 +1,16 @@
+.sticky-wrapper {
+  position: relative;
+  min-height: 100vh;
+
+  &__box {
+    height: 0;
+    position: sticky;
+    top: 0;
+
+    &__content {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+  }
+}

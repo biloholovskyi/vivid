@@ -1,0 +1,119 @@
+.vacancy {
+  background: #F1F1F1;
+  padding-top: 128px;
+  position: relative;
+
+  .main-title {
+    margin-bottom: 24px;
+  }
+
+  &__list-cat {
+    .item {
+      padding-left: 18px;
+      line-height: 48px;
+      font-size: 16px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(34, 34, 34, 0.4);
+      position: relative;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &--active {
+        color: $mainDark;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 2px;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background-color: $chery;
+        }
+      }
+    }
+  }
+
+  &__list-wrapper {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 64px;
+      width: 100%;
+      background: linear-gradient(180deg, #F1F1F1 0%, rgba(241, 241, 241, 0) 100%);
+      z-index: 20;
+      transform: rotate(180deg);
+    }
+
+  }
+
+  &__list {
+    width: 100%;
+    position: relative;
+    max-height: calc(100vh - 128px);
+    overflow: auto;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    display: none;
+
+
+    .item {
+      width: 100%;
+      padding: 8px 0 9px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      transition: all .3s;
+      position: relative;
+
+      &:last-child {
+        margin-bottom: 40px;
+      }
+
+      .name {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+      }
+
+      .detail {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 300;
+        letter-spacing: 0.01em;
+        color: #767676;
+        margin-top: -5px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: #fff;
+        border: none;
+        padding: 8px 0 9px 24px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        border-radius: 4px;
+
+        &::before {
+          content: "";
+          height: 100%;
+          width: 4px;
+          background-color: $chery;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-bottom-left-radius: 8px;
+          border-top-left-radius: 8px;
+        }
+      }
+    }
+  }
+
+  .show {
+    display: block;
+  }
+}

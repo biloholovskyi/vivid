@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Бизнесу{% endblock %}
+
+{% block content %}
+<section class="content-card">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="main-title">Бизнесу</h3>
+      </div>
+    </div>
+  </div>
+  <div class="card-wrapper">
+    <div class="container">
+      <div class="row">
+        {% if cards_list %}
+          {% for card in cards_list %}
+          <div class="col-6">
+            <a href="./{{card.card_link}}">
+              <div class="card-box" style="background-image:url(/media/{{card.card_img}});">
+                <div class="card-box__title">{{card.card_title}}</div>
+                <div class="card-box__name">{{card.card_name|safe}}</div>
+                <div class="card-box__desc">{{card.card_desc|safe}}</div>
+                <div class="card-box__link"></div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        {% endif %}
+        <div class="col-6">
+          <div class="card-box card-box--no-img">
+            <div class="card-box__title">Контакты</div>
+            {% for contact in contacts_list %}
+            {% for c in contact.contacts.all %}
+            <div class="card-box__contact">
+              {% if c.status == 'link' %}
+              <a href="{{c.link}}" target="_blank" class="contact">{{c.name|safe}}</a>
+              {% else %}
+              <div class="contact">{{c.name|safe}}</div>
+              {% endif %}
+              <div class="name">{{c.desc|safe}}</div>
+            </div>
+            {% endfor %}
+            {% endfor %}
+            <div class="card-box__contact">
+              <a href="#" target="_blank" class="red-button card-box__contact__button">Обратная связь</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reports">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="reports__navigation">
+          <h3 class="main-title">Документы</h3>
+          <div class="reports__buttons">
+            <div class="prev disabled"></div>
+            <div class="next"></div>
+          </div>
+        </div>
+        <div class="reports__slider" data-count="1">
+          {% if reports_list %}
+            {% for report in reports_list %}
+            <a download href="/media/{{report.report_file}}" class="reports__slider__item">
+              <div class="name">{{report.report_name}}</div>
+              <div class="desc">{{report.report_desc}}</div>
+              <div class="date">{{report.report_date|date:"d.m.y"}}</div>
+            </a>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% with contacts=menu_contacts footer_socials=footer_socials footer_contacts=footer_contacts %}
+{% include 'footer.html' %}
+{% endwith %}
+{% endblock %}

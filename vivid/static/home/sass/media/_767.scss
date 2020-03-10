@@ -1,0 +1,75 @@
+@media screen and (max-width: 767px) {
+  // footer
+  .footer {
+    &__list {
+      margin-bottom: 20px;
+    }
+
+    .footer__list__media--left {
+      text-align: left;
+    }
+
+    .footer__list__media--right {
+      text-align: right;
+    }
+  }
+  // footer end
+
+  // main-section
+  .main-section {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .main-section__title {
+    font-size: 56px;
+    line-height: 70px;
+  }
+  // main-section end
+
+  // main-info-oil
+  .main-info-oil {
+    padding-bottom: 48px;
+    padding-top: 148px;
+
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+
+  .main-info-oil__bottle {
+    max-width: 173px;
+    margin-left: -86.5px;
+  }
+
+  .main-info-oil__title {
+    color: rgba(34, 34, 34, 0.1);
+    font-size: 80px;
+    line-height: 100px;
+    margin-bottom: 391px;
+  }
+
+  .main-info-oil__wrapper {
+    .main-info-oil__row {
+      flex-direction: column;
+
+      .item {
+        margin-bottom: 32px;
+      }
+
+      .left {
+        margin-right: 0;
+        text-align: center;
+      }
+
+      .right {
+        margin-left: 0;
+        text-align: center;
+      }
+    }
+  }
+  // main-info-oil end
+}

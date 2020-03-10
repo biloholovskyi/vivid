@@ -1,0 +1,47 @@
+@media screen and (max-width: 575px) {
+  // header
+  .header {
+    .red-button {
+      display: none;
+    }
+
+    &__logo {
+      margin-left: 0;
+      left: auto;
+      right: 48px;
+    }
+  }
+  // header end
+
+  // main-modal
+  .menu__body {
+    .menu__form {
+      .contact-item {
+        .link {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+
+  .menu__header {
+    .menu__close {
+      .icon {
+        width: 18px;
+        height: 18px;
+        min-width: 18px;
+        margin-right: 10px;
+      }
+
+      .text {
+        display: none;
+      }
+    }
+
+    .menu__lang {
+      .item {
+        font-size: 12px;
+      }
+    }
+  }
+}

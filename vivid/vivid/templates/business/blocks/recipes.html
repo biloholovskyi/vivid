@@ -1,0 +1,25 @@
+<section class="recipes" style="z-index: {{z}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="main-title">Vivid для рецептов высокой кухни</h3>
+
+        <div class="recipes__slider" data-count="1">
+          <div class="prev disabled"></div>
+          <div class="next"></div>
+          {% if recipes %}
+          {% for r in recipes %}
+          <div class="item">
+            <picture>
+              <source type="image/" srcset="/media/{{r.img}}">
+              <img src="/media/{{r.img}}" alt="{{r.name}}">
+            </picture>
+            <div class="desc">{{r.text}}</div>
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

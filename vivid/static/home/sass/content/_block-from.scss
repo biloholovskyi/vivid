@@ -1,0 +1,64 @@
+.block-form {
+  padding: 120px 0 80px 0;
+  background-color: #fff;
+  position: relative;
+
+  .main-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  form {
+    width: 100%;
+
+    input {
+      width: 100%;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 56px;
+      border: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      margin-bottom: 32px;
+
+      &::placeholder {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 56px;
+        color: rgba(34, 34, 34, 0.56);
+      }
+    }
+
+    .red-button {
+      padding: 17px 32px 18px 32px;
+      font-size: 18px;
+      line-height: 22px;
+      display: block;
+      margin: 16px auto 0 auto;
+      border: none;
+    }
+
+    .checkbox-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .political-check {
+      -webkit-appearance: checkbox;
+      margin-bottom: 0;
+      margin-right: 15px;
+      width: auto;
+    }
+
+    .political-check__text {
+      font-size: 12px;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}

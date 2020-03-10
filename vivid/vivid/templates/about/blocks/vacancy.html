@@ -1,0 +1,43 @@
+<section class="vacancy section-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <h3 class="main-title">Наши вакансии</h3>
+        <div class="vacancy__list-cat news-cat">
+          <div class="item item--active" id="all">Все вакансии</div>
+          <div class="item" id="office">Офис</div>
+          <div class="item" id="prod">Производство</div>
+        </div>
+      </div>
+      <script>
+        var vacList = {{all_json|safe}};
+      </script>
+      <div class="col-6 vacancy__list-wrapper">
+        <div class="vacancy__list news-all show">
+          {% for a in all %}
+          <div class="item" data-pk="{{a.pk}}">
+            <div class="name">{{a.name}}</div>
+            <div class="detail">{{a.atr}} • {{a.type}} • {{a.price}}</div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="vacancy__list news-office">
+          {% for a in office %}
+          <div class="item" data-pk="{{a.pk}}">
+            <div class="name">{{a.name}}</div>
+            <div class="detail">{{a.atr}} • {{a.type}} • {{a.price}}</div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="vacancy__list news-prod">
+          {% for a in prod %}
+          <div class="item" data-pk="{{a.pk}}">
+            <div class="name">{{a.name}}</div>
+            <div class="detail">{{a.atr}} • {{a.type}} • {{a.price}}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

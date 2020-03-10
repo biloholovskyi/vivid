@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<section class="news">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <a href="/news/" class="all-news">Все новости</a>
+        <h3 class="main-title">{{title}}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="news__wrapper">
+    <div class="container">
+      <div class="row">
+        {% if articles %}
+        {% for article in articles %}
+        <div class="col-4">
+          <a href="{% url 'news:article' article.id %}">
+            <div class="news__item news__item--mb">
+              <picture class="photo">
+                <source type="image/img+svg" srcset="/media/{{article.photo}}">
+                <img src="/media/{{article.photo}}" alt="{{article.title}}">
+              </picture>
+              <div class="desc">{{article.small_desc}}</div>
+              {% if article.category == 'Свежие акции' %}
+              <div class="date">{{article.date_start|date:"d"}}-{{article.date|date:"d F, Y"}}</div>
+              {% else %}
+              <div class="date">{{article.date|date:"d F, Y"}}</div>
+              {% endif %}
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% with contacts=menu_contacts footer_socials=footer_socials footer_contacts=footer_contacts %}
+{% include 'footer.html' %}
+{% endwith %}
+{% endblock %}

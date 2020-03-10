@@ -1,0 +1,70 @@
+{% extends 'business/page.html' %}
+{% load static %}
+
+{% block title %}
+{{page.page_name}}
+{% endblock %}
+
+{% block header %}
+{% with page=page %}
+{% include '../page-head.html'  %}
+{% endwith %}
+{% endblock %}
+
+{% block content %}
+<div style="height: 396px;"></div>
+{% include './blocks/oil-vivid.html' %}
+{% include './blocks/first.html' %}
+{% with geo=geo %}
+{% include './blocks/geography.html' %}
+{% endwith %}
+{% with adv=adv %}
+{% include './blocks/advantages.html' %}
+{% endwith %}
+{% with awards=awards %}
+{% include './blocks/awards.html' %}
+{% endwith %}
+<section class="partner-contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="main-title">Контакты</h3>
+      </div>
+    </div>
+  </div>
+  <div class="card-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="card-box card-box--no-img">
+            <div class="card-box__title">{{page.contacts_name}}</div>
+            {% for c in page.contacts.all %}
+            <div class="card-box__contact">
+              {% if c.status == 'link' %}
+              <a href="{{c.link}}" target="_blank" class="contact">{{c.name|safe}}</a>
+              {% else %}
+              <div class="contact">{{c.name|safe}}</div>
+              {% endif %}
+              <div class="name">{{c.desc|safe}}</div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="partner-contact__pres">
+            <div class="text">Получите презентацию нашего продукта</div>
+            <a href="/media/{{presentation}}" download="" class="red-button">Скачать презентацию</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="business-next-page">
+    <div class="text">Перейти к следующему разделу</div>
+    <a href="/business/retail/" class="button">Розничным сетям</a>
+  </div>
+</section>
+{% with contacts=menu_contacts footer_socials=footer_socials %}
+{% include 'footer.html' %}
+{% endwith %}
+{% endblock %}

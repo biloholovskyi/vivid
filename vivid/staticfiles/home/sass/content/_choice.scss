@@ -1,0 +1,43 @@
+.choice {
+  position: relative;
+  background-color: #fff;
+
+  &__top-text {
+    margin-bottom: 29px;
+    font-size: 18px;
+    line-height: 36px;
+    color: #222222;
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 32px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 32px;
+      display: block;
+    }
+  }
+
+  &__title {
+    margin-top: 32px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    color: $mainDark;
+  }
+
+  &__text-img {
+    margin-top: 12px;
+    margin-bottom: 32px;
+
+    p {
+      font-size: 14px;
+      line-height: 28px;
+      color: #767676;
+    }
+  }
+}

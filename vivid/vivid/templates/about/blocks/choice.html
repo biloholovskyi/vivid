@@ -1,0 +1,48 @@
+{% load static %}
+<section class="main-box-wrapper choice sticky-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="sticky-wrapper__box">
+          <div class="sticky-wrapper__box__content">
+            <h3 class="main-title" style="padding-top: 128px;">{{page.choice_title|safe}}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="choice__top-text" style="padding-top: 128px;">{{page.choice_text}}</div>
+        <picture class="choice__img">
+          <source type="image/" srcset="/static/home/media/image/choice1.jpg">
+          <img src="/static/home/media/image/choice1.jpg" alt="img">
+        </picture>
+        <div class="main-box-wrapper__content">
+          <div class="main-box-wrapper__content__imgs">
+            <div class="item">
+              <picture>
+                <source type="image/" srcset="/static/home/media/image/choice2.jpg">
+                <img src="/static/home/media/image/choice2.jpg" alt="img">
+              </picture>
+              <div class="choice__title">{{page.choice_title_1}}</div>
+              <div class="choice__text-img">
+                <p>{{page.choice_item_1_1}}</p>
+                <p>{{page.choice_item_1_2}}</p>
+              </div>
+            </div>
+            <div class="item">
+              <picture>
+                <source type="image/" srcset="/static/home/media/image/choice3.jpg">
+                <img src="/static/home/media/image/choice3.jpg" alt="img">
+              </picture>
+              <div class="choice__title">{{page.choice_title_2}}</div>
+              <div class="choice__text-img">
+                <p>{{page.choice_item_2_1}}</p>
+                <p>{{page.choice_item_2_2}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="choice__top-text">{{page.choice_text_bottom}}</div>
+      </div>
+    </div>
+  </div>
+</section>

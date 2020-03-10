@@ -1,0 +1,55 @@
+<section class="menu">
+  <div class="menu__header">
+    <div class="menu__close">
+      <div class="icon"></div>
+      <div class="text">Закрыть</div>
+    </div>
+    <div class="menu__lang">
+      <div class="item item--active">Русский</div>
+      <div class="item">English</div>
+      <div class="item">Татар</div>
+    </div>
+  </div>
+  <div class="menu__body">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="menu__nav">
+            <a href="/" class="item">Главная</a>
+            <a href="/business" class="item">Бизнесу</a>
+            <a href="/about" class="item">О компании</a>
+            <a href="/news" class="item">Новости</a>
+            <a href="/contacts" class="item">Контакты</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="menu__form">
+            {% for c in contacts.card_contacts.all %}
+            <div class="contact-item">
+              {% if c.status == 'link' %}
+              <a href="{{c.link}}" target="_blank" class="link">{{c.name|safe}}</a>
+              {% else %}
+              <div class="link">{{c.name|safe}}</div>
+              {% endif %}
+              <div class="desc">{{c.desc|safe}}</div>
+            </div>
+            {% endfor %}
+            <div class="block-form">
+              <h3 class="main-title">Напишите нам</h3>
+              <form>
+                <input type="text" placeholder="Ваше имя">
+                <input type="text" placeholder="Ваш номер телефона">
+                <input type="text" placeholder="Ваш Email (необязательно)">
+                <input type="text" placeholder="Ваш Вопрос">
+                <button class="red-button" type="submit">Отправить</button>
+                <div class="checkbox-wrapper">
+                  <div class="political-check__text">Нажимая кнопку "отправить", вы соглашаетесь с <a href="/political/">политикой обработки данных</a></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

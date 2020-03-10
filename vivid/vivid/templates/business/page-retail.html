@@ -1,0 +1,95 @@
+{% extends 'business/page.html' %}
+{% load static %}
+
+{% block title %}
+{{page.page_name}}
+{% endblock %}
+
+{% block header %}
+{% with page=page %}
+{% include '../page-head.html'  %}
+{% endwith %}
+{% endblock %}
+
+{% block content %}
+<div style="height: 396px;"></div>
+{% with z=1 %}
+{% include './blocks/oil-vivid.html' %}
+{% endwith %}
+{% with z=2 %}
+{% include './blocks/first.html' %}
+{% endwith %}
+{% with retail=retail z=3 %}
+{% include './blocks/retail-slider.html' %}
+{% endwith %}
+{% with z=4 %}
+{% include './blocks/ctm.html' %}
+{% endwith %}
+{% with geo=geo z=5 %}
+{% include './blocks/geography.html' %}
+{% endwith %}
+{% with adv=adv z=6 %}
+{% include './blocks/advantages.html' %}
+{% endwith %}
+{% with awards=awards %}
+{% include './blocks/awards.html' %}
+{% endwith %}
+<section class="partner-contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="main-title">Контакты</h3>
+      </div>
+    </div>
+  </div>
+  <div class="card-wrapper" style="margin-bottom: 0; padding-bottom: 128px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="card-box card-box--no-img card-box--no-h">
+            <div class="card-box__title">{{page.contacts_name}}</div>
+            {% for c in page.contacts.all %}
+            <div class="card-box__contact">
+              {% if c.status == 'link' %}
+              <a href="{{c.link}}" target="_blank" class="contact">{{c.name|safe}}</a>
+              {% else %}
+              <div class="contact">{{c.name|safe}}</div>
+              {% endif %}
+              <div class="name">{{c.desc|safe}}</div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card-box card-box--no-img card-box--no-h">
+            <div class="card-box__title">{{page.contacts_name_2}}</div>
+            {% for c in page.contacts_2.all %}
+            <div class="card-box__contact">
+              {% if c.status == 'link' %}
+              <a href="{{c.link}}" target="_blank" class="contact">{{c.name|safe}}</a>
+              {% else %}
+              <div class="contact">{{c.name|safe}}</div>
+              {% endif %}
+              <div class="name">{{c.desc|safe}}</div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% with presentation=presentation %}
+{% include './blocks/presentation.html' %}
+{% endwith %}
+{% include './blocks/block-form.html' %}
+<section class="partner-contact">
+  <div class="business-next-page">
+    <div class="text">Перейти к следующему разделу</div>
+    <a href="/business/restaurant/" class="button">Ресторанам</a>
+  </div>
+</section>
+{% with contacts=menu_contacts footer_socials=footer_socials %}
+{% include 'footer.html' %}
+{% endwith %}
+{% endblock %}

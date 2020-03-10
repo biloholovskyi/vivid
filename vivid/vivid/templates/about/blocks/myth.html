@@ -1,0 +1,43 @@
+{% load static %}
+<section class="main-box-wrapper myth sticky-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="sticky-wrapper__box">
+          <div class="sticky-wrapper__box__content">
+            <h3 class="main-title" style="padding-top: 128px;">{{page.myth_title|safe}}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="myth__top-title" style="padding-top: 128px;">{{page.myth_title_1}}</div>
+        <picture class="myth__img">
+          <source type="image/" srcset="/static/home/media/image/myth.jpg">
+          <img src="/static/home/media/image/myth.jpg" alt="img">
+        </picture>
+        <div class="main-box-wrapper__content">
+          <div class="myth__title">{{page.myth_title_2}}</div>
+          <div class="myth__text">{{page.myth_text}}</div>
+          <div class="main-box-wrapper__content__imgs">
+            <div class="item">
+              <div class="myth__title">{{page.myth_title_3}}</div>
+              <div class="myth__desc" style="margin-top: 12px;margin-bottom: 32px;">{{page.myth_text_3}}</div>
+              <picture>
+                <source type="image/" srcset="/static/home/media/image/myth1.jpg">
+                <img src="/static/home/media/image/myth1.jpg" alt="img">
+              </picture>
+            </div>
+            <div class="item">
+              <picture>
+                <source type="image/" srcset="/static/home/media/image/myth3.jpg">
+                <img src="/static/home/media/image/myth3.jpg" alt="img">
+              </picture>
+              <div class="myth__title" style="margin-top: 32px;margin-bottom: 12px;">{{page.myth_title_4}}</div>
+              <div class="myth__desc">{{page.myth_text_4}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

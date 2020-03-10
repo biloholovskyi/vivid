@@ -1,0 +1,70 @@
+.partner-contact {
+  background-color: #fff;
+  position: relative;
+
+  .main-title {
+    margin-bottom: 64px;
+  }
+
+  .card-wrapper {
+    margin-bottom: 128px;
+  }
+
+  .card-box {
+    margin-bottom: 0;
+  }
+
+  &__pres {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .text {
+      font-size: 40px;
+      line-height: 56px;
+      text-align: center;
+      letter-spacing: -0.02em;
+      margin-bottom: 39px;
+    }
+
+    .red-button {
+      padding: 17px 33px 18px 31px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  .business-next-page {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+
+    .text {
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: -0.02em;
+      color: $dark;
+      margin-right: 32px;
+    }
+
+    .button {
+      padding: 17px 32px 18px 32px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      background: #FFC01C;
+      
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
