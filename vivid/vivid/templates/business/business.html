@@ -19,7 +19,8 @@
           {% for card in cards_list %}
           <div class="col-12 col-lg-6">
             <a href="./{{card.card_link}}">
-              <div class="card-box" style="background-image:url(/media/{{card.card_img}});">
+              <div class="card-box">
+                <img src="/media/{{card.card_img}}" alt="vivid">
                 <div class="card-box__title">{{card.card_title}}</div>
                 <div class="card-box__name">{{card.card_name|safe}}</div>
                 <div class="card-box__desc">{{card.card_desc|safe}}</div>
