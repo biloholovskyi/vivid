@@ -5,6 +5,7 @@ import {switchHeader} from "./switchHeader";
 import {prodModalOpen, prodModalClose} from "./productionModal";
 import {vac} from "./vac";
 import {scrollBottle} from "./mainBottle";
+import {reportsSliderNext, reportsSliderPrev} from './docSlider';
 
 $(document).ready(function(){
   setTimeout(() => {
@@ -63,37 +64,6 @@ $(window).on('scroll', function () {
 });
 
 // sliders
-const reportsSliderNext = () => {
-  let sliderItem = $(".reports__slider__item");
-  let slider = $(".reports__slider");
-  let countFactor = slider.attr("data-count");
-  let translate = -432 * +countFactor;
-
-  if(sliderItem.length - +countFactor > 2) {
-    slider.attr("data-count", +countFactor + 1);
-    sliderItem.css("transform", "translateX(" + translate + "px)");
-    $(".reports__buttons .prev").removeClass("disabled");
-
-    if(+countFactor + 3 === sliderItem.length) {
-      $(".reports__buttons .next").addClass("disabled");
-    }
-  }
-};
-const reportsSliderPrev = () => {
-  let sliderItem = $(".reports__slider__item");
-  let slider = $(".reports__slider");
-  let countFactor = slider.attr("data-count");
-  let translate = -432 * (+countFactor - 2);
-  if(+countFactor > 1) {
-    slider.attr("data-count", +countFactor - 1);
-    sliderItem.css("transform", "translateX(" + translate + "px)");
-    $(".reports__buttons .next").removeClass("disabled");
-  }
-
-  if(slider.attr("data-count") === "1") {
-    $(".reports__buttons .prev").addClass("disabled");
-  }
-};
 const retailSliderNext = () => {
   let sliderItem = $(".retail-slider__list .item");
   let slider = $(".retail-slider__list");

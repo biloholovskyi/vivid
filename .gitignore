@@ -1,0 +1,7 @@
+/node_modules
+/assets
+/vivid/venv
+/back-up
+.idea
+*.rar
+*.zip
