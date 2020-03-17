@@ -82,6 +82,12 @@
       bottom: 16px;
     }
 
+    .card-box--dark {
+      .card-box__text {
+        text-align: center;
+      }
+    }
+
     .card-box--no-img {
       .card-box__contact {
         .contact {

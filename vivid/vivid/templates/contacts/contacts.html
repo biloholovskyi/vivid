@@ -17,7 +17,7 @@
       <div class="row">
         {% if contacts_cards %}
         {% for card in contacts_cards %}
-        <div class="col-6">
+        <div class="col-12 col-lg-6">
           {% if card.status == 'main' %}
           <div class="card-box card-box--no-img">
             {% else %}
@@ -39,7 +39,7 @@
           {% endfor %}
           {% else %}
           {% endif %}
-          <div class="col-6">
+          <div class="col-12 col-lg-6">
             <div class="card-box card-box--no-img card-box--dark">
               <div class="card-box__title">Остались вопросы?</div>
               <div class="card-box__text">Напишите нам</div>
