@@ -44,6 +44,10 @@
       justify-content: flex-end;
       width: 100%;
       margin-top: 15px;
+
+      &--center {
+        justify-content: center;
+      }
     }
 
     .political-check {

@@ -204,11 +204,25 @@
           }
         }
 
+        .desc-wrapper {
+          display: flex;
+
+          .political-check__text {
+            font-size: 12px;
+            text-align: right;
+
+            a {
+              text-decoration: underline;
+            }
+          }
+        }
+
         .desc-button {
           font-size: 12px;
           line-height: 22px;
           letter-spacing: -0.01em;
           color: #767676;
+          min-width: 50%;
         }
       }
     }
