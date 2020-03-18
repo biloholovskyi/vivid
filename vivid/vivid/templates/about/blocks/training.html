@@ -1,14 +1,14 @@
-<div class="training sticky-wrapper" style="z-index: {{z}}">
+<div class="training sticky-wrapper sticky-wrapper--adaptive" style="z-index: {{z}}">
   <div class="container">
     <div class="row">
-      <div class="col-6">
+      <div class="col-12 col-lg-6">
         <div class="sticky-wrapper__box">
           <div class="sticky-wrapper__box__content">
             <div class="main-title" style="padding-top: 147px;">{{page.press_title|safe}}</div>
           </div>
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-12 col-lg-6">
         <div class="main-box-wrapper__content" style="padding-top: 147px; margin-bottom: 92px;">
           <div class="main-box-wrapper__content__imgs">
             <div class="item">
@@ -28,12 +28,14 @@
               <div class="myth__desc">{{page.press_2_text}}</div>
             </div>
           </div>
-          <picture class="training__big">
-            <source type="image/" srcset="/static/home/media/image/train3.jpg">
-            <img src="/static/home/media/image/train3.jpg" alt="img">
-          </picture>
-          <div class="training__big-title">{{page.press_3_title|safe}}</div>
-          <div class="training__big-desc">{{page.press_3_text}}</div>
+          <div class="training__big-wrapper">
+            <picture class="training__big">
+              <source type="image/" srcset="/static/home/media/image/train3.jpg">
+              <img src="/static/home/media/image/train3.jpg" alt="img">
+            </picture>
+            <div class="training__big-title">{{page.press_3_title|safe}}</div>
+            <div class="training__big-desc">{{page.press_3_text}}</div>
+          </div>
           <div class="main-box-wrapper__content__imgs">
             <div class="item">
               <picture>

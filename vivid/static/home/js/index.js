@@ -6,13 +6,15 @@ import {prodModalOpen, prodModalClose} from "./productionModal";
 import {vac} from "./vac";
 import {scrollBottle} from "./mainBottle";
 import {reportsSliderNext, reportsSliderPrev} from './docSlider';
+import {fixer} from './fixer.js';
 
-$(document).ready(function(){
+$(document).ready(function() {
   setTimeout(() => {
     if($('.main-info-oil__bottle').length > 0) {
       scrollBottle();
     }
   }, 500);
+  fixer();
   $(".reports__buttons .next").on("click", reportsSliderNext);
   $(".reports__buttons .prev").on("click", reportsSliderPrev);
   $(".retail-slider .slider-nav .next").on("click", retailSliderNext);
@@ -53,7 +55,7 @@ $(document).ready(function(){
 });
 
 $(window).resize(function () {
-
+  fixer();
 });
 
 $(window).on('scroll', function () {

@@ -13,4 +13,18 @@
       height: 100vh;
     }
   }
+
+  &--adaptive {
+    min-height: auto;
+
+    .sticky-wrapper__box {
+      height: auto;
+      position: relative;
+
+      &__content {
+        position: relative;
+        height: auto;
+      }
+    }
+  }
 }

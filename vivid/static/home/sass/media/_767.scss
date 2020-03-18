@@ -94,4 +94,261 @@
     }
   }
   // news end
+
+  // page production
+  .materials {
+    .materials__text {
+      padding-top: 48px !important;
+
+      .main-title {
+        padding-top: 0;
+      }
+
+      .desc {
+        margin-top: 12px;
+      }
+    }
+
+    .main-box-wrapper__content {
+      padding-top: 16px !important;
+      margin-bottom: 24px !important;
+
+      .materials__img {
+        margin-bottom: 16px;
+
+        img {
+          height: 170px;
+        }
+      }
+    }
+
+    .main-box-wrapper__content__imgs {
+      margin-bottom: 0;
+
+      .item {
+        &:first-child {
+          margin-right: 8px;
+        }
+
+        &:last-child {
+          margin-left: 8px;
+        }
+
+        img {
+          height: 136px;
+        }
+      }
+    }
+  }
+
+  .training {
+    .main-title {
+      padding-top: 24px !important;
+    }
+
+    .main-box-wrapper__content {
+      padding-top: 16px !important;
+      margin-bottom: 24px !important;
+    }
+
+    .main-box-wrapper__content__imgs {
+      display: block;
+      margin-bottom: 24px;
+
+      .item {
+        margin-right: 0;
+        width: 100%;
+        min-width: 100%;
+
+        &:first-child {
+          margin-bottom: 24px;
+        }
+
+        &:last-child {
+          display: flex;
+          flex-direction: column;
+
+          .myth__title {
+            order: 1;
+            margin-top: 0 !important;
+          }
+
+          picture {
+            order: 3;
+          }
+
+          .myth__desc {
+            order: 2;
+          }
+        }
+
+        .myth__title {
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 24px;
+        }
+
+        .myth__desc {
+          margin-bottom: 12px !important;
+        }
+
+        img,
+        picture {
+          height: 162px;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+
+        .item {
+          display: flex;
+          flex-direction: column;
+
+          &:first-child {
+            .myth__title {
+              order: 1;
+              margin-top: 0 !important;
+              margin-bottom: 12px !important;
+            }
+
+            .myth__desc {
+              order: 2;
+            }
+
+            picture {
+              order: 3;
+            }
+          }
+        }
+      }
+    }
+
+    .training__big-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      .training__big {
+        height: 162px;
+        order: 3;
+        margin-bottom: 24px;
+
+        img {
+          height: 162px;
+        }
+      }
+
+      .training__big-desc {
+        margin: 12px 0;
+      }
+    }
+  }
+
+  .first-press {
+    .col-12 {
+      &:last-child {
+        padding-top: 16px !important;
+        margin-bottom: 24px !important;
+      }
+    }
+
+    .main-title {
+      padding-top: 24px !important;
+    }
+
+    .first-press__title {
+      padding-top: 0 !important;
+    }
+
+    .first-press__text {
+      margin-bottom: 12px !important;
+    }
+
+    .first-press__img {
+      height: 162px;
+
+      img {
+        height: 162px;
+      }
+    }
+
+    .first-press__adaptive {
+      display: flex;
+      flex-direction: column;
+
+      .first-press__img {
+        order: 3;
+      }
+
+      .first-press__text {
+        margin-top: 0 !important;
+      }
+    }
+  }
+
+  .clear {
+    .main-title {
+      padding-top: 24px !important;
+    }
+
+    .clear__title {
+      padding-top: 16px !important;
+    }
+
+    .clear__text {
+      margin-bottom: 24px;
+    }
+
+    .main-box-wrapper__content {
+      margin-bottom: 24px !important;
+    }
+
+    .main-box-wrapper__content__imgs {
+      margin-bottom: 16px;
+
+      .item {
+        &:first-child {
+          margin-right: 8px;
+        }
+
+        &:last-child {
+          margin-left: 8px;
+        }
+
+        img {
+          height: 240px;
+        }
+      }
+    }
+
+    .training__big-desc {
+      margin: 12px 0 0 0;
+    }
+  }
+
+  .first-press--grade {
+    .first-press__text {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+  }
+
+  .clear-vivid-oil {
+    .main-box-wrapper__content {
+      padding-top: 12px !important;
+    }
+
+    .training__big-title {
+      display: none;
+    }
+
+    .training__big-desc {
+      display: none;
+    }
+
+    .main-box-wrapper__content__imgs {
+      margin-bottom: 0;
+    }
+  }
+  // page production end
 }
