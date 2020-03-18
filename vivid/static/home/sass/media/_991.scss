@@ -55,4 +55,25 @@
       }
     }
   }
+
+  // news
+  .other-news {
+    .news__wrapper {
+      .news__item {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  // news end
+
+  // banner
+  .header__wrapper {
+    .title__wrapper {
+      .page-title {
+        font-size: 56px;
+        line-height: 70px;
+      }
+    }
+  }
+  // banner end
 }

@@ -72,4 +72,26 @@
     }
   }
   // main-info-oil end
+
+  // news
+  .news {
+    .main-title {
+      font-size: 36px;
+    }
+  }
+  .news__wrapper {
+    .head-block {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .title {
+        font-size: 30px;
+      }
+    }
+
+    .news__item {
+      margin-bottom: 20px;
+    }
+  }
+  // news end
 }

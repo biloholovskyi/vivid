@@ -43,7 +43,7 @@
       <div class="row">
         {% if article.category == 'Свежие акции' %}
         {% for art in stocks %}
-        <div class="col-4">
+        <div class="col-12 col-lg-4">
           <a href="{% url 'news:article' art.id %}">
             <div class="news__item">
               <picture class="photo">
@@ -58,7 +58,7 @@
         {% endfor %}
         {% elif article.category == 'Новости компании' %}
         {% for art in company %}
-        <div class="col-4">
+        <div class="col-12 col-lg-4">
           <a href="{% url 'news:article' art.id %}">
             <div class="news__item">
               <picture class="photo">
@@ -73,7 +73,7 @@
         {% endfor %}
         {% elif article.category == 'Пресса о нас' %}
         {% for art in smi %}
-        <div class="col-4">
+        <div class="col-12 col-lg-4">
           <a href="{% url 'news:article' art.id %}">
             <div class="news__item">
               <picture class="photo">

@@ -99,6 +99,19 @@
   }
   // content card end
 
+  // articles
+  .article__share {
+    .icon-wrapper {
+      .item {
+        width: 60px;
+        min-width: 60px;
+        height: 60px;
+        background-size: 20px;
+      }
+    }
+  }
+  // articles end
+
   // other
   .main-title {
     font-size: 40px;

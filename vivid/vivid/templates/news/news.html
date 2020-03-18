@@ -25,7 +25,7 @@
       <div class="row">
         {% if stocks %}
         {% for article in stocks %}
-        <div class="col-4">
+        <div class="col-12 col-md-6 col-lg-4">
           <a href="{% url 'news:article' article.id %}">
             <div class="news__item">
               <picture class="photo">
@@ -56,7 +56,7 @@
       <div class="row">
         {% if company %}
         {% for article in company %}
-        <div class="col-4">
+        <div class="col-12 col-md-6 col-lg-4">
           <a href="{% url 'news:article' article.id %}">
             {% if forloop.counter <= 3 %}
             <div class="news__item news__item--mb">
@@ -80,7 +80,7 @@
   <div class="news__wrapper">
     <div class="container">
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 col-md-6 col-lg-4">
           <div class="head-block">
             <div class="title">Пресса о нас</div>
             <a href="./smi/" class="all">Смотреть все</a>
@@ -90,7 +90,7 @@
       <div class="row">
         {% if smi %}
         {% for article in smi %}
-        <div class="col-4">
+        <div class="col-12 col-md-6 col-lg-4">
           <a href="{% url 'news:article' article.id %}">
             <div class="news__item">
               <picture class="photo">
