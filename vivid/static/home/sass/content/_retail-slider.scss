@@ -24,20 +24,17 @@
     display: flex;
 
     .item {
-      width: 300px;
-      min-width: 300px;
-      margin-right: 48px;
+      width: 50%;
+      min-width: 50%;
       padding: 0 25px;
       transition: all .3s;
-
-      &:last-child {
-        margin-right: 0;
-      }
+      display: flex;
+      align-items: center;
 
       .img {
         img {
-          margin: 0 auto 31px auto;
           object-fit: contain;
+          object-position: left center;
           display: block;
         }
       }
@@ -46,30 +43,28 @@
         font-weight: 500;
         font-size: 16px;
         line-height: 28px;
-        text-align: center;
+        margin-bottom: 15px;
       }
 
       .name-desc {
         font-size: 14px;
         line-height: 24px;
         font-weight: 300;
-        text-align: center;
         letter-spacing: 0.01em;
         color: #767676;
-        margin-top: -5px;
-        margin-bottom: 7px;
+        margin-bottom: 15px;
       }
 
       .under-item {
         display: flex;
-        justify-content: space-between;
         width: 100%;
-        border-bottom: 1px solid rgba(34, 34, 34, 0.2);
 
         &__name {
           font-size: 14px;
           line-height: 40px;
           color: rgba(34, 34, 34, 0.6);
+          width: 190px;
+          min-width: 190px;
         }
 
         &__count {
