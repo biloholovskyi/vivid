@@ -2,7 +2,7 @@ from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render
 
 from .models import Contact, ContactCard, SocialFooter, FooterContact
-from main.models import MenuSettings
+from main.models import MenuSettings, MainSettings
 
 
 def index(request):
@@ -12,6 +12,7 @@ def index(request):
         menu_contacts = MenuSettings.objects.get(slug='menu_settings')
         footer_socials = SocialFooter.objects.all()
         footer_contacts = FooterContact.objects.all()
+        settings = MainSettings.objects.get(slug='main_settings')
     except:
         raise Http404('Страница не найдена')
     return render(request, 'contacts/contacts.html', {
@@ -19,5 +20,6 @@ def index(request):
         'contacts_cards': contacts_cards,
         'menu_contacts': menu_contacts,
         'footer_socials': footer_socials,
-        'footer_contacts': footer_contacts
+        'footer_contacts': footer_contacts,
+        'settings': settings
     })

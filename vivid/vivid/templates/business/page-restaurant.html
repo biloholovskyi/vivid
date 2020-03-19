@@ -67,14 +67,16 @@
     </div>
   </div>
 </section>
+{% with pdf=settings.pdf %}
 {% include './blocks/block-form.html' %}
+{% endwith %}
 <section class="partner-contact">
   <div class="business-next-page">
     <div class="text">Перейти к следующему разделу</div>
     <a href="/business/partner/" class="button">Партнерам</a>
   </div>
 </section>
-{% with contacts=menu_contacts footer_socials=footer_socials %}
+{% with contacts=menu_contacts footer_socials=footer_socials pdf=settings.pdf %}
 {% include 'footer.html' %}
 {% endwith %}
 {% endblock %}

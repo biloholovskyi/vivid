@@ -54,8 +54,10 @@
     </div>
   </div>
 
-  {% with contacts=contacts %}
+  {% with contacts=contacts pdf=pdf%}
   {% include 'menu.html' %}
   {% endwith %}
+  {% with pdf=pdf %}
   {% include 'main-modal.html' %}
+  {% endwith %}
 </footer>

@@ -69,13 +69,13 @@
         </div>
         <div class="desc-wrapper">
           <div class="desc-button">*.PDF, .DOCX, .DOC. Максимальный размер файла - 150 мб</div>
-          <div class="political-check__text">Нажимая кнопку "отправить", вы соглашаетесь с <a href="/political/">политикой обработки данных</a></div>
+          <div class="political-check__text">Нажимая кнопку "отправить", вы соглашаетесь с <a href="/media/{{settings.pdf}}" target="_blank">политикой обработки данных</a></div>
         </div>
       </form>
     </div>
   </div>
 </div>
-{% with contacts=menu_contacts footer_socials=footer_socials %}
+{% with contacts=menu_contacts footer_socials=footer_socials pdf=settings.pdf %}
 {% include 'footer.html' %}
 {% endwith %}
 {% endblock %}

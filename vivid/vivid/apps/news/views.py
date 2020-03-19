@@ -2,7 +2,7 @@ from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render
 
 from .models import Article
-from main.models import MenuSettings
+from main.models import MenuSettings, MainSettings
 from contacts.models import SocialFooter, FooterContact
 
 
@@ -15,6 +15,7 @@ def index(request):
         menu_contacts = MenuSettings.objects.get(slug='menu_settings')
         footer_socials = SocialFooter.objects.all()
         footer_contacts = FooterContact.objects.all()
+        settings = MainSettings.objects.get(slug='main_settings')
     except:
         raise Http404('Страница не найдена')
     return render(request, 'news/news.html', {
@@ -24,7 +25,8 @@ def index(request):
         'smi': smi,
         'menu_contacts': menu_contacts,
         'footer_socials': footer_socials,
-        'footer_contacts': footer_contacts
+        'footer_contacts': footer_contacts,
+        'settings': settings
     })
 
 
@@ -38,6 +40,7 @@ def article(request, article_id):
         menu_contacts = MenuSettings.objects.get(slug='menu_settings')
         footer_socials = SocialFooter.objects.all()
         footer_contacts = FooterContact.objects.all()
+        settings = MainSettings.objects.get(slug='main_settings')
     except:
         raise Http404("Статья не найдена!")
 
@@ -48,7 +51,8 @@ def article(request, article_id):
         'smi': smi,
         'menu_contacts': menu_contacts,
         'footer_socials': footer_socials,
-        'footer_contacts': footer_contacts
+        'footer_contacts': footer_contacts,
+        'settings': settings
     })
 
 
@@ -59,6 +63,7 @@ def stocks(request):
         menu_contacts = MenuSettings.objects.get(slug='menu_settings')
         footer_socials = SocialFooter.objects.all()
         footer_contacts = FooterContact.objects.all()
+        settings = MainSettings.objects.get(slug='main_settings')
     except:
         raise Http404('Page not found')
     return render(request, 'news/cat.html', {
@@ -66,7 +71,8 @@ def stocks(request):
         'title': title,
         'menu_contacts': menu_contacts,
         'footer_socials': footer_socials,
-        'footer_contacts': footer_contacts
+        'footer_contacts': footer_contacts,
+        'settings': settings
     })
 
 
@@ -77,6 +83,7 @@ def company(request):
         menu_contacts = MenuSettings.objects.get(slug='menu_settings')
         footer_socials = SocialFooter.objects.all()
         footer_contacts = FooterContact.objects.all()
+        settings = MainSettings.objects.get(slug='main_settings')
     except:
         raise Http404('Page not found')
     return render(request, 'news/cat.html', {
@@ -84,7 +91,8 @@ def company(request):
         'title': title,
         'menu_contacts': menu_contacts,
         'footer_socials': footer_socials,
-        'footer_contacts': footer_contacts
+        'footer_contacts': footer_contacts,
+        'settings': settings
     })
 
 
@@ -95,6 +103,7 @@ def smi(request):
         menu_contacts = MenuSettings.objects.get(slug='menu_settings')
         footer_socials = SocialFooter.objects.all()
         footer_contacts = FooterContact.objects.all()
+        settings = MainSettings.objects.get(slug='main_settings')
     except:
         raise Http404('Page not found')
     return render(request, 'news/cat.html', {
@@ -102,5 +111,6 @@ def smi(request):
         'title': title,
         'menu_contacts': menu_contacts,
         'footer_socials': footer_socials,
-        'footer_contacts': footer_contacts
+        'footer_contacts': footer_contacts,
+        'settings': settings
     })

@@ -64,7 +64,7 @@
     <a href="/business/retail/" class="button">Розничным сетям</a>
   </div>
 </section>
-{% with contacts=menu_contacts footer_socials=footer_socials %}
+{% with contacts=menu_contacts footer_socials=footer_socials pdf=settings.pdf %}
 {% include 'footer.html' %}
 {% endwith %}
 {% endblock %}

@@ -5,7 +5,7 @@ from django.core import serializers
 from .models import *
 from news.models import Article
 from blocks.models import Recipes
-from main.models import MenuSettings
+from main.models import MenuSettings, MainSettings
 from contacts.models import SocialFooter, FooterContact
 
 
@@ -15,12 +15,14 @@ def index(request):
     menu_contacts = MenuSettings.objects.get(slug='menu_settings')
     footer_socials = SocialFooter.objects.all()
     footer_contacts = FooterContact.objects.all()
+    settings = MainSettings.objects.get(slug='main_settings')
     return render(request, 'about/about.html', {
         'cards_list': cards_list,
         'articles': articles,
         'menu_contacts': menu_contacts,
         'footer_socials': footer_socials,
-        'footer_contacts': footer_contacts
+        'footer_contacts': footer_contacts,
+        'settings': settings
     })
 
 
@@ -31,6 +33,7 @@ def page_oil(request):
         menu_contacts = MenuSettings.objects.get(slug='menu_settings')
         footer_socials = SocialFooter.objects.all()
         footer_contacts = FooterContact.objects.all()
+        settings = MainSettings.objects.get(slug='main_settings')
     except:
         raise Http404('Страница не найдена')
     return render(request, 'about/page-oil.html', {
@@ -38,7 +41,8 @@ def page_oil(request):
         'recipes': recipes,
         'menu_contacts': menu_contacts,
         'footer_socials': footer_socials,
-        'footer_contacts': footer_contacts
+        'footer_contacts': footer_contacts,
+        'settings': settings
     })
 
 
@@ -49,6 +53,7 @@ def page_production(request):
         menu_contacts = MenuSettings.objects.get(slug='menu_settings')
         footer_socials = SocialFooter.objects.all()
         footer_contacts = FooterContact.objects.all()
+        settings = MainSettings.objects.get(slug='main_settings')
     except:
         raise Http404('Страница не найдена')
     return render(request, 'about/page-production.html', {
@@ -56,7 +61,8 @@ def page_production(request):
         'production': production,
         'menu_contacts': menu_contacts,
         'footer_socials': footer_socials,
-        'footer_contacts': footer_contacts
+        'footer_contacts': footer_contacts,
+        'settings': settings
     })
 
 
@@ -67,6 +73,7 @@ def page_team(request):
         menu_contacts = MenuSettings.objects.get(slug='menu_settings')
         footer_socials = SocialFooter.objects.all()
         footer_contacts = FooterContact.objects.all()
+        settings = MainSettings.objects.get(slug='main_settings')
     except:
         raise Http404('Страница не найдена')
     return render(request, 'about/page-team.html', {
@@ -74,7 +81,8 @@ def page_team(request):
         'team': team,
         'menu_contacts': menu_contacts,
         'footer_socials': footer_socials,
-        'footer_contacts': footer_contacts
+        'footer_contacts': footer_contacts,
+        'settings': settings
     })
 
 
@@ -89,6 +97,7 @@ def page_career(request):
         menu_contacts = MenuSettings.objects.get(slug='menu_settings')
         footer_socials = SocialFooter.objects.all()
         footer_contacts = FooterContact.objects.all()
+        settings = MainSettings.objects.get(slug='main_settings')
     except:
         raise Http404('Страница не найдена')
     return render(request, 'about/page-career.html', {
@@ -100,5 +109,6 @@ def page_career(request):
         'all_json': all_json,
         'menu_contacts': menu_contacts,
         'footer_socials': footer_socials,
-        'footer_contacts': footer_contacts
+        'footer_contacts': footer_contacts,
+        'settings': settings
     })

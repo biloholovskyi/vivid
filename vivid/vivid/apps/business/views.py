@@ -5,6 +5,7 @@ from .models import Card, Report, PageForPartners, PageRetail, PageRestaurant, P
 from blocks.models import Advantages, Awards, RetailOil, Recipes
 from main.models import MenuSettings
 from contacts.models import SocialFooter, FooterContact
+from main.models import MainSettings
 
 
 def index(request):
@@ -14,13 +15,15 @@ def index(request):
     menu_contacts = MenuSettings.objects.get(slug='menu_settings')
     footer_socials = SocialFooter.objects.all()
     footer_contacts = FooterContact.objects.all()
+    settings = MainSettings.objects.get(slug='main_settings')
     return render(request, 'business/business.html', {
         'cards_list': cards_list,
         'reports_list': reports_list,
         'contacts_list': contacts,
         'menu_contacts': menu_contacts,
         'footer_socials': footer_socials,
-        'footer_contacts': footer_contacts
+        'footer_contacts': footer_contacts,
+        'settings': settings
     })
 
 
@@ -34,6 +37,7 @@ def page_partner(request):
         menu_contacts = MenuSettings.objects.get(slug='menu_settings')
         footer_socials = SocialFooter.objects.all()
         footer_contacts = FooterContact.objects.all()
+        settings = MainSettings.objects.get(slug='main_settings')
     except:
         raise Http404('Страница не найдена')
     return render(request, 'business/page-partner.html', {
@@ -44,7 +48,8 @@ def page_partner(request):
         'presentation': presentation,
         'menu_contacts': menu_contacts,
         'footer_socials': footer_socials,
-        'footer_contacts': footer_contacts
+        'footer_contacts': footer_contacts,
+        'settings': settings
     })
 
 
@@ -59,6 +64,7 @@ def page_retail(request):
         menu_contacts = MenuSettings.objects.get(slug='menu_settings')
         footer_socials = SocialFooter.objects.all()
         footer_contacts = FooterContact.objects.all()
+        settings = MainSettings.objects.get(slug='main_settings')
     except:
         raise Http404('Страница не найдена')
     return render(request, 'business/page-retail.html', {
@@ -70,7 +76,8 @@ def page_retail(request):
         'presentation': presentation,
         'menu_contacts': menu_contacts,
         'footer_socials': footer_socials,
-        'footer_contacts': footer_contacts
+        'footer_contacts': footer_contacts,
+        'settings': settings
     })
 
 
@@ -83,6 +90,7 @@ def page_restaurant(request):
         menu_contacts = MenuSettings.objects.get(slug='menu_settings')
         footer_socials = SocialFooter.objects.all()
         footer_contacts = FooterContact.objects.all()
+        settings = MainSettings.objects.get(slug='main_settings')
     except:
         raise Http404('Страница не найдена')
     return render(request, 'business/page-restaurant.html', {
@@ -92,5 +100,6 @@ def page_restaurant(request):
         'recipes': recipes,
         'menu_contacts': menu_contacts,
         'footer_socials': footer_socials,
-        'footer_contacts': footer_contacts
+        'footer_contacts': footer_contacts,
+        'settings': settings
     })

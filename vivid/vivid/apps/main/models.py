@@ -21,8 +21,7 @@ class MainSettings(models.Model):
     slug = models.CharField('slug', max_length=100, default='main_settings')
     banner = models.FileField('Баннер', null=True, blank=True)
     title = models.CharField('Заголовок', max_length=500, null=True, blank=True)
-    desc = models.TextField('Описание', null=True, blank=True)
-    video = models.FileField('Видео ', null=True, blank=True)
+    pdf = models.FileField('Политика обработки данных', null=True, blank=True)
 
     def __str__(self):
         return 'Настройки'
