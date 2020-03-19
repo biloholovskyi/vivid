@@ -139,6 +139,23 @@
   }
   // recipes slider end
 
+  // main modal form
+  .main-modal {
+    .main-modal__body {
+      .title {
+        font-size: 26px;
+        line-height: 36px;
+      }
+
+      .block-form {
+        input {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+  // main modal form end
+
   // other
   .main-title {
     font-size: 24px;
