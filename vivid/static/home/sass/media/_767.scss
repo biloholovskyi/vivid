@@ -351,4 +351,23 @@
     }
   }
   // page production end
+
+  // news in main
+  .news-in-main {
+    .item-news {
+      flex-direction: column-reverse;
+
+      .img {
+        width: 100%;
+        height: 170px;
+        margin-bottom: 18px;
+
+        img {
+          width: 100%;
+          height: 170px;
+        }
+      }
+    }
+  }
+  // news in main end
 }
