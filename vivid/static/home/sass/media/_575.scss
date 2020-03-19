@@ -121,6 +121,24 @@
   }
   // production end
 
+  // recipes slider
+  .recipes__slider {
+    .item {
+      min-width: 100%;
+      width: 100%;
+      padding-right: 25px;
+    }
+
+    .prev {
+      left: -5px;
+    }
+
+    .next {
+      right: -5px;
+    }
+  }
+  // recipes slider end
+
   // other
   .main-title {
     font-size: 24px;

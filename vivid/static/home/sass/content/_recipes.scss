@@ -47,13 +47,13 @@
     }
 
     .item {
-      min-width: 400px;
-      width: 400px;
-      margin-right: 32px;
+      min-width: 432px;
+      width: 432px;
+      padding-right: 32px;
       transition: all .3s;
 
       &:last-child {
-        margin-right: 0;
+        padding-right: 0;
       }
 
       picture,
