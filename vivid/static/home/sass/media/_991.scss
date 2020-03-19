@@ -76,4 +76,52 @@
     }
   }
   // banner end
+
+  // awards
+  .awards {
+    padding: 48px 0;
+
+    .main-title {
+      font-size: 24px;
+      line-height: 30px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .awards__slider {
+      flex-direction: column;
+      margin-bottom: 0;
+
+      .item {
+        width: 100%;
+        min-width: 100%;
+        margin-bottom: 40px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .icon,
+        img {
+          width: 64px;
+          min-width: 64px;
+          height: 64px;
+          min-height: 64px;
+          max-height: 64px;
+          object-position: center;
+          object-fit: contain;
+        }
+
+        .text {
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+
+  .awards__nav {
+    display: none;
+  }
+  // awards end
 }

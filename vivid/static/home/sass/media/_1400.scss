@@ -1,0 +1,11 @@
+@media screen and (max-width: 1400px) {
+  .awards__slider {
+    max-width: 100%;
+    width: 100%;
+
+    .item {
+      width: 290px;
+      min-width: 290px;
+    }
+  }
+}

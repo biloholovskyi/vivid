@@ -7,6 +7,8 @@ import {vac} from "./vac";
 import {scrollBottle} from "./mainBottle";
 import {reportsSliderNext, reportsSliderPrev} from './docSlider';
 import {fixer} from './fixer.js';
+import {retailSliderNext, retailSliderPrev} from "./retailSlider";
+import {awardsSliderPrev, awardsSliderNext, createTimeLineAward} from "./advSlider";
 
 $(document).ready(function() {
   setTimeout(() => {
@@ -66,37 +68,6 @@ $(window).on('scroll', function () {
 });
 
 // sliders
-const retailSliderNext = () => {
-  let sliderItem = $(".retail-slider__list .item");
-  let slider = $(".retail-slider__list");
-  let countFactor = slider.attr("data-count");
-  let translate = -348 * +countFactor;
-
-  if(sliderItem.length - +countFactor > 2) {
-    slider.attr("data-count", +countFactor + 1);
-    sliderItem.css("transform", "translateX(" + translate + "px)");
-    $(".retail-slider .prev").removeClass("disabled");
-
-    if(+countFactor + 3 === sliderItem.length) {
-      $(".retail-slider .next").addClass("disabled");
-    }
-  }
-};
-const retailSliderPrev = () => {
-  let sliderItem = $(".retail-slider__list .item");
-  let slider = $(".retail-slider__list");
-  let countFactor = slider.attr("data-count");
-  let translate = -348 * (+countFactor - 2);
-  if(+countFactor > 1) {
-    slider.attr("data-count", +countFactor - 1);
-    sliderItem.css("transform", "translateX(" + translate + "px)");
-    $(".retail-slider .next").removeClass("disabled");
-  }
-
-  if(slider.attr("data-count") === "1") {
-    $(".retail-slider .prev").addClass("disabled");
-  }
-};
 const recipesSliderNext = () => {
   let sliderItem = $(".recipes__slider .item");
   let slider = $(".recipes__slider");
@@ -127,55 +98,6 @@ const recipesSliderPrev = () => {
   if(slider.attr("data-count") === "1") {
     $(".recipes__slider .prev").addClass("disabled");
   }
-};
-const awardsSliderNext = () => {
-  let sliderItem = $(".awards__slider .item");
-  let slider = $(".awards__slider");
-  let countFactor = slider.attr("data-count");
-  let translate = -350 * +countFactor;
-  let timeCurr = $(".awards__nav .timeline .item--active");
-  let timeNext = timeCurr.next(".item");
-
-  if(sliderItem.length - +countFactor > 3) {
-    slider.attr("data-count", +countFactor + 1);
-    sliderItem.css("transform", "translateX(" + translate + "px)");
-    $(".awards__nav .prev").removeClass("disabled");
-    $(".awards__nav .timeline .item").removeClass("item--active");
-    timeNext.addClass("item--active");
-
-    if(+countFactor + 4 === sliderItem.length) {
-      $(".awards__nav .next").addClass("disabled");
-    }
-  }
-};
-const awardsSliderPrev = () => {
-  let sliderItem = $(".awards__slider .item");
-  let slider = $(".awards__slider");
-  let countFactor = slider.attr("data-count");
-  let translate = -350 * (+countFactor - 2);
-  let timeCurr = $(".awards__nav .timeline .item--active");
-  let timeNext = timeCurr.prev(".item");
-  if(+countFactor > 1) {
-    slider.attr("data-count", +countFactor - 1);
-    sliderItem.css("transform", "translateX(" + translate + "px)");
-    $(".awards__nav .next").removeClass("disabled");
-    $(".awards__nav .timeline .item").removeClass("item--active");
-    timeNext.addClass("item--active");
-  }
-
-  if(slider.attr("data-count") === "1") {
-    $(".awards__nav .prev").addClass("disabled");
-  }
-};
-const createTimeLineAward = () => {
-  let timeline = $(".awards__nav .timeline");
-  let count = $(".awards__slider .item").length;
-  timeline.html("");
-  for(let i = 3; i < count; i++) {
-    timeline.append("<div class='item'></div>")
-  }
-
-  timeline.children(".item:first-child").addClass("item--active");
 };
 
 const advSliderNext = () => {

@@ -50,6 +50,7 @@ class SocialFooter(models.Model):
         verbose_name = 'Соц сеть в подвале'
         verbose_name_plural = 'Соц сети в подвале'
 
+
 class FooterContact(models.Model):
     link = models.CharField('Ссылка', max_length=900, null=True)
     name = models.CharField('Название', max_length=600, null=True)
