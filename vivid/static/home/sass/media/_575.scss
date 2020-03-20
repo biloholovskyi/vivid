@@ -191,6 +191,36 @@
   }
   // career modal end
 
+  // oil page
+  .oil-oil,
+  .cold-pressed,
+  .choice,
+  .myth {
+    .main-box-wrapper__content__imgs {
+      flex-direction: column;
+
+      .item {
+        width: 100%;
+        min-width: 100%;
+
+        picture {
+          height: 162px;
+
+          img {
+            height: 162px;
+          }
+        }
+      }
+    }
+  }
+
+  .myth__top-title,
+  .proof__top-title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  // oil page end
+
   // other
   .main-title {
     font-size: 24px;

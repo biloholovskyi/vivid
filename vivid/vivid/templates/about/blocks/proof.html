@@ -1,15 +1,15 @@
 {% load static %}
-<section class="main-box-wrapper proof sticky-wrapper">
+<section class="main-box-wrapper proof sticky-wrapper sticky-wrapper--adaptive">
   <div class="container">
     <div class="row">
-      <div class="col-6">
+      <div class="col-12 col-lg-6">
         <div class="sticky-wrapper__box">
           <div class="sticky-wrapper__box__content">
             <h3 class="main-title" style="padding-top: 128px;">{{page.proof_title|safe}}</h3>
           </div>
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-12 col-lg-6">
         <div class="proof__top-title" style="padding-top: 128px;">{{page.proof_title_1}}</div>
         <picture class="proof__img">
           <source type="image/" srcset="/media/{{page.proof_img}}">

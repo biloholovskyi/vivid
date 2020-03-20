@@ -1,15 +1,15 @@
 {% load static %}
-<section class="main-box-wrapper myth sticky-wrapper">
+<section class="main-box-wrapper myth sticky-wrapper sticky-wrapper--adaptive">
   <div class="container">
     <div class="row">
-      <div class="col-6">
+      <div class="col-12 col-lg-6">
         <div class="sticky-wrapper__box">
           <div class="sticky-wrapper__box__content">
             <h3 class="main-title" style="padding-top: 128px;">{{page.myth_title|safe}}</h3>
           </div>
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-12 col-lg-6">
         <div class="myth__top-title" style="padding-top: 128px;">{{page.myth_title_1}}</div>
         <picture class="myth__img">
           <source type="image/" srcset="/media/{{page.myth_img_big}}">
