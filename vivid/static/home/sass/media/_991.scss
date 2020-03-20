@@ -126,7 +126,8 @@
   // awards end
 
   // news-in-main
-  .news-in-main {
+  .news-in-main,
+  .vacancy {
     padding: 48px 0;
     min-height: auto;
     max-height: 100%;
@@ -180,4 +181,50 @@
     }
   }
   // news-in-main end
+
+  // adv slider
+  .advantages-slider {
+    padding: 48px 0;
+
+    .main-title {
+      padding-top: 0;
+      margin-bottom: 24px;
+    }
+
+    .adv-slider__nav {
+      margin-bottom: 24px;
+      justify-content: space-between;
+    }
+  }
+  // adv slider end
+
+  // career modal
+  .vac-profile {
+    .body {
+      .left {
+        padding: 0 16px;
+      }
+
+      .left__title {
+        font-size: 30px;
+      }
+
+      .right {
+        form {
+          .desc-button {
+            font-size: 10px;
+            line-height: 12px;
+          }
+
+          .desc-wrapper {
+            .political-check__text {
+              font-size: 10px;
+              line-height: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+  // career modal end
 }

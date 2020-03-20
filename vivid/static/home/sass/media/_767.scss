@@ -370,4 +370,45 @@
     }
   }
   // news in main end
+
+  // adv slider
+  .advantages-slider {
+    .main-title {
+      font-size: 30px;
+      line-height: 46px;
+    }
+
+    .adv-slider__nav {
+
+    }
+  }
+  // adv slider end
+
+  // career modal
+  .vac-profile {
+    .body {
+      .right {
+        form {
+          .button-wrapper {
+            flex-direction: column;
+            align-items: flex-start;
+
+            .resume {
+              margin-bottom: 12px;
+            }
+          }
+
+          .desc-wrapper {
+            flex-direction: column;
+            
+            .political-check__text {
+              text-align: left;
+              margin-top: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+  // career modal end
 }

@@ -156,6 +156,41 @@
   }
   // main modal form end
 
+  // career modal
+  .vac-modal__body {
+    .vac-modal__head {
+      .top {
+        margin-bottom: 12px;
+        flex-direction: column;
+
+        .name {
+          font-size: 24px;
+          line-height: 30px;
+          margin-bottom: 12px;
+        }
+
+        .right {
+          width: 100%;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+
+  .vac-profile {
+    .body {
+      .left {
+        display: none;
+      }
+
+      .right {
+        width: 100%;
+        min-width: 100%;
+      }
+    }
+  }
+  // career modal end
+
   // other
   .main-title {
     font-size: 24px;
