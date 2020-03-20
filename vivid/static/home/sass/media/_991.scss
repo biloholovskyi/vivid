@@ -233,4 +233,58 @@
     padding-bottom: 48px;
   }
   // oil page end
+
+  // retail slider
+  .retail-slider__list {
+    flex-direction: column;
+
+    .item {
+      padding: 0;
+      width: 100%;
+      min-width: 100%;
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .retail-slider {
+    .title-wrapper {
+      flex-direction: column;
+
+      .slider-nav {
+        margin-top: 24px;
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  }
+  // retail slider end
+
+  // retail contacts
+  .partner-contact {
+    .card-box {
+      margin-bottom: 24px;
+    }
+  }
+  // retail contacts end
+
+  // presentation
+  .presentation__wrapper {
+    flex-direction: column;
+
+    .presentation__title {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+  }
+  // presentation end
+
+  // page restaurant
+  .partner-contact__pres {
+    padding: 48px 0;
+  }
+  // page restaurant end
 }

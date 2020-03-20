@@ -1,7 +1,7 @@
-<section class="woman sticky-wrapper" style="z-index: {{z}}">
+<section class="woman sticky-wrapper sticky-wrapper--adaptive" style="z-index: {{z}}">
   <div class="container">
     <div class="row">
-      <div class="col-6">
+      <div class="col-12 col-lg-6">
         <div class="sticky-wrapper__box">
           <div class="sticky-wrapper__box__content">
             <div class="main-title" style="padding-top: 148px;">{{page.text|safe}}</div>
@@ -9,7 +9,7 @@
           </div>
         </div>
       </div>
-      <div class="col-6" style="margin-top: 148px; margin-bottom: 120px;">
+      <div class="col-12 col-lg-6 woman-col" style="margin-top: 148px; margin-bottom: 120px;">
         <picture class="woman__img">
           <source type="image/" srcset="/media/{{page.photo}}">
           <img src="/media/{{page.photo}}" alt="logo">

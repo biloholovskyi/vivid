@@ -221,6 +221,45 @@
   }
   // oil page end
 
+  // oil business page
+  .presentation__wrapper {
+    .presentation__title {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  .block-form {
+    .main-title {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  .ctm {
+    .use-list {
+      flex-direction: column;
+      align-items: flex-start;
+
+      picture {
+        margin-right: 0;
+        margin-bottom: 12px;
+
+        img {
+          margin-right: 0;
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+
+  .retail-slider__list {
+    .item {
+      flex-direction: column;
+    }
+  }
+  // oil business page end
+
   // other
   .main-title {
     font-size: 24px;

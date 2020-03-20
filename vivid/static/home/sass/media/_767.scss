@@ -487,4 +487,85 @@
     }
   }
   // oil page end
+
+  // oil business page
+  .first-oil {
+    .main-box-wrapper__content__imgs {
+      flex-direction: column;
+
+      .item {
+        margin-bottom: 24px;
+        width: 100%;
+        min-width: 100%;
+
+        picture {
+          height: 170px;
+
+          img {
+            height: 170px;
+          }
+        }
+      }
+    }
+  }
+
+  .first-in-world {
+    padding-bottom: 40px !important;
+
+    .main-box-wrapper__content {
+      min-height: auto !important;
+      height: auto !important;
+    }
+  }
+
+  .retail-slider {
+    .main-title {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  .ctm {
+    padding: 48px 0;
+
+    &::before {
+      background-image: none;
+    }
+
+    .ctm__title {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  .advantages {
+    padding: 48px 0;
+
+    .main-title {
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 48px;
+    }
+  }
+
+  .block-form {
+    .main-title {
+      font-size: 40px;
+      line-height: 50px;
+    }
+  }
+  // oil business page end
+
+  // page restaurant page
+  .woman {
+    .main-title {
+      padding-top: 48px !important;
+    }
+  }
+
+  .woman-col {
+    margin-top: 48px !important;
+    margin-bottom: 48px !important;
+  }
+  // page restaurant page end
 }

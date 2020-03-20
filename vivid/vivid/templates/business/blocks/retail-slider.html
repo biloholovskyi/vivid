@@ -1,51 +1,44 @@
 {% load static %}
-<section class="retail-slider sticky-wrapper" style="position: relative; background-color: #fff; z-index: {{z}}">
-  <div style="display: flex; width: 100%;">
-    <div style="height: 100vh;"></div>
-    <div class="sticky-wrapper__box" style="width: 100%; padding: 148px 0 0 0;">
-      <div class="sticky-wrapper__box__content" style="padding-bottom: 131px; overflow: hidden;">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="title-wrapper">
-                <h3 class="main-title">Ассортимент для розницы</h3>
-                <div class="slider-nav">
-                  <div class="prev disabled"></div>
-                  <div class="next"></div>
-                </div>
+<section class="retail-slider" style="position: relative; background-color: #fff; z-index: {{z}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-wrapper">
+          <h3 class="main-title">Ассортимент для розницы</h3>
+          <div class="slider-nav">
+            <div class="prev disabled"></div>
+            <div class="next"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="retail-slider__list" data-count="1">
+          {% if retail %}
+          {% for r in retail %}
+          <div class="item">
+            <picture class="img">
+              <source type="image/" srcset="/media/{{r.img}}">
+              <img src="/media/{{r.img}}" alt="{{r.name}}">
+            </picture>
+            <div class="retail-slider__item-info">
+              <div class="name">{{r.name}}</div>
+              <div class="name-desc">{{r.price}}</div>
+              <div class="under-item">
+                <div class="under-item__name">Минимальная партия</div>
+                <div class="under-item__count">{{r.minimum}}</div>
               </div>
+              <div class="under-item">
+                <div class="under-item__name">Объем</div>
+                <div class="under-item__count">{{r.size}}</div>
+              </div>
+              <div class="text-title">Другие характеристики</div>
+              <div class="text-item">{{r.desc}}</div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="retail-slider__list" data-count="1">
-                {% if retail %}
-                {% for r in retail %}
-                <div class="item">
-                  <picture class="img">
-                    <source type="image/" srcset="/media/{{r.img}}">
-                    <img src="/media/{{r.img}}" alt="{{r.name}}">
-                  </picture>
-                  <div class="retail-slider__item-info">
-                    <div class="name">{{r.name}}</div>
-                    <div class="name-desc">{{r.price}}</div>
-                    <div class="under-item">
-                      <div class="under-item__name">Минимальная партия</div>
-                      <div class="under-item__count">{{r.minimum}}</div>
-                    </div>
-                    <div class="under-item">
-                      <div class="under-item__name">Объем</div>
-                      <div class="under-item__count">{{r.size}}</div>
-                    </div>
-                    <div class="text-title">Другие характеристики</div>
-                    <div class="text-item">{{r.desc}}</div>
-                  </div>
-                </div>
-                {% endfor %}
-                {% endif %}
-              </div>
-            </div>
-          </div>
+          {% endfor %}
+          {% endif %}
         </div>
       </div>
     </div>
