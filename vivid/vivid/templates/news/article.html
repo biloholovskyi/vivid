@@ -12,6 +12,7 @@
 {% endblock %}
 
 {% block content %}
+<script type="text/javascript" src="https://vk.com/js/api/share.js?93" charset="windows-1251"></script>
 <div class="container">
   <div class="row">
     <div class="col-12">
@@ -19,12 +20,18 @@
       <div class="article__share">
         <div class="title">Поделитесь новостью</div>
         <div class="icon-wrapper">
-          <a href="#" class="item instagram"></a>
-          <a href="https://twitter.com/share?url=https://localhost:3000/{{ request.path }}"
+          <a href="https://vk.com/share.php?url=https://vividoil.ru/{{ request.path }}"
+             class="item instagram"
+             target="popup"
+             onClick="window.open('https://vk.com/share.php?url=https://vividoil.ru/{{ request.path }}', '', 'height=300,width=600'); return false;"></a>
+          <a href="https://twitter.com/share?url=https://vividoil.ru/{{ request.path }}"
              class="item twitter"
              target="popup"
-             onclick="window.open('https://twitter.com/share?url=https://localhost:3000/{{ request.path }}', '', 'height=300,width=600'); return false;"></a>
-          <a href="#" class="item youtube"></a>
+             onclick="window.open('https://twitter.com/share?url=https://vividoil.ru/{{ request.path }}', '', 'height=300,width=600'); return false;"></a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://vividoil.ru/{{ request.path }}"
+             class="item youtube"
+             target="popup"
+             onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://vividoil.ru/{{ request.path }}', '', 'height=300,width=600'); return false;"></a>
         </div>
       </div>
     </div>
