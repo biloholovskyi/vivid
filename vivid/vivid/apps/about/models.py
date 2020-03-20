@@ -25,12 +25,16 @@ class PageOil(models.Model):
     # first block
     first_title = models.CharField('Название', max_length=600, null=True, blank=True)
     first_text_1 = models.TextField('Текст 1', null=True, blank=True)
+    first_img_1 = models.FileField('Картинка 1', null=True, blank=True)
     first_text_2 = models.TextField('Текст 2', null=True, blank=True)
+    first_img_2 = models.FileField('Картинка 2', null=True, blank=True)
     # cold
     cold_title = models.CharField('Название', max_length=600, null=True, blank=True)
     cold_text = models.TextField('Текст', null=True, blank=True)
     cold_text_1 = models.TextField('Текст 1', null=True, blank=True)
+    cold_img_1 = models.FileField('Картинка 1', null=True, blank=True)
     cold_text_2 = models.TextField('Текст 2', null=True, blank=True)
+    cold_img_2 = models.FileField('Картинка 2', null=True, blank=True)
     # choice
     choice_title = models.CharField('Название', max_length=600, null=True, blank=True)
     choice_text = models.TextField('Текст', null=True, blank=True)
@@ -41,10 +45,14 @@ class PageOil(models.Model):
     choice_item_2_1 = models.TextField('Текст', null=True, blank=True)
     choice_item_2_2 = models.TextField('Текст', null=True, blank=True)
     choice_text_bottom = models.TextField('Текст снизу', null=True, blank=True)
+    choice_img_big = models.FileField('Большая картинка>', null=True, blank=True)
+    choice_img_1 = models.FileField('Картинка 1', null=True, blank=True)
+    choice_img_2 = models.FileField('Картинка 2', null=True, blank=True)
     # proof
     proof_title = models.CharField('Название', max_length=600, null=True, blank=True)
     proof_title_1 = models.CharField('Название 1', max_length=600, null=True, blank=True)
     proof_text = models.TextField('Текст', null=True, blank=True)
+    proof_img = models.FileField('Картинка', null=True, blank=True)
     # myth
     myth_title = models.CharField('Название', max_length=600, null=True, blank=True)
     myth_title_1 = models.CharField('Название 1', max_length=600, null=True, blank=True)
@@ -54,6 +62,9 @@ class PageOil(models.Model):
     myth_text_3 = models.TextField('Текст 3', null=True, blank=True)
     myth_title_4 = models.CharField('Название 4', max_length=600, null=True, blank=True)
     myth_text_4 = models.TextField('Текст 4', null=True, blank=True)
+    myth_img_big = models.FileField('Большая картинка>', null=True, blank=True)
+    myth_img_1 = models.FileField('Картинка 1', null=True, blank=True)
+    myth_img_2 = models.FileField('Картинка 2', null=True, blank=True)
 
     def __str__(self):
         return self.page_name
@@ -68,35 +79,57 @@ class PageProduction(models.Model):
     bread_crumbs = models.CharField('Крошки', max_length=200, null=True)
     page_name = models.CharField('Название страницы', max_length=200)
     page_photo = models.FileField('Фон', null=True, blank=True)
+    # first
     first_title = models.CharField('Название', max_length=600, null=True, blank=True)
     first_text = models.TextField('Текст', null=True, blank=True)
+    first_img_big = models.FileField('Большая картинка>', null=True, blank=True)
+    first_img_1 = models.FileField('Картинка 1', null=True, blank=True)
+    first_img_2 = models.FileField('Картинка 2', null=True, blank=True)
+    # press
     press_title = models.CharField('Название', max_length=600, null=True, blank=True)
     press_first_title = models.CharField('Название первого блока', max_length=600, null=True, blank=True)
     press_first_text = models.TextField('Текст первого блока', null=True, blank=True)
+    press_img_1 = models.FileField('Картинка 1', null=True, blank=True)
     press_2_title = models.CharField('Название второго блока', max_length=600, null=True, blank=True)
     press_2_text = models.TextField('Текст второго блока', null=True, blank=True)
+    press_img_2 = models.FileField('Картинка 2', null=True, blank=True)
     press_3_title = models.CharField('Название третьего блока', max_length=600, null=True, blank=True)
     press_3_text = models.TextField('Текст третьего блока', null=True, blank=True)
+    press_img_big = models.FileField('Большая картинка', null=True, blank=True)
     press_4_title = models.CharField('Название четвертого блока', max_length=600, null=True, blank=True)
     press_4_text = models.TextField('Текст четвертого блока', null=True, blank=True)
+    press_img_4 = models.FileField('Картинка 4', null=True, blank=True)
     press_5_title = models.CharField('Название пятого блока', max_length=600, null=True, blank=True)
     press_5_text = models.TextField('Текст пятого блока', null=True, blank=True)
+    press_img_5 = models.FileField('Картинка 5', null=True, blank=True)
+    # cold
     cold_title = models.CharField('Название', max_length=600, null=True, blank=True)
     # cold_title_1 = models.CharField('Название 1', max_length=600, null=True, blank=True)
     cold_text = models.TextField('Текст', null=True, blank=True)
+    cold_img = models.FileField('Картинка', null=True, blank=True)
+    # clear
     clear_title = models.CharField('Название', max_length=600, null=True, blank=True)
     clear_title_1 = models.CharField('Название 1', max_length=600, null=True, blank=True)
     clear_text_1 = models.TextField('Текст 1 очистка масла', null=True, blank=True)
+    clear_img_1 = models.FileField('Картинка 1', null=True, blank=True)
     clear_title_2 = models.CharField('Название 2', max_length=600, null=True, blank=True)
     clear_text_2 = models.TextField('Текст 2 очистка масла', null=True, blank=True)
+    clear_img_2 = models.FileField('Картинка 2', null=True, blank=True)
+    # filter
     filter_title = models.CharField('Название', max_length=600, null=True, blank=True)
     filter_text = models.TextField('Текст', null=True, blank=True)
+    filter_img = models.FileField('Картинка', null=True, blank=True)
+    # check
     check_title = models.CharField('Название', max_length=600, null=True, blank=True)
     check_text = models.TextField('Текст', null=True, blank=True)
+    check_img = models.FileField('Картинка', null=True, blank=True)
+    # oil
     oil_title = models.CharField('Название', max_length=600, null=True, blank=True)
     oil_title_small = models.CharField('Подпись', max_length=600, null=True, blank=True)
     oil_title_1 = models.CharField('Название 1', max_length=600, null=True, blank=True)
     oil_text = models.TextField('Текст', null=True, blank=True)
+    oil_img_1 = models.FileField('Картинка 1', null=True, blank=True)
+    oil_img_2 = models.FileField('Картинка 2', null=True, blank=True)
 
     def __str__(self):
         return self.page_name
