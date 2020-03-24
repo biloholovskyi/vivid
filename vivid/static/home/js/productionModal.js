@@ -1,5 +1,5 @@
 function prodModalOpen (e) {
-  if($(window).width() > 1350) {
+  if($(window).width() > 991) {
     if(!$(e.target).hasClass('close')) {
       const shadow = $(this).children('.shadow').outerHeight();
       const modal = $(this).children('.item__modal');
@@ -19,14 +19,30 @@ function prodModalOpen (e) {
       modal.addClass('item__modal--show');
     }
   } else {
-    console.log($(e.target).parent('.item--main'));
+    if(!$(e.target).hasClass('close')) {
+      setTimeout(() => {
+        $('body').css('overflow', 'hidden');
+      }, 200);
+      // сама модалка
+      const modal = $(this).children('.item__modal');
+
+      // закрываем другие модалки
+      prodModalClose();
+
+      $('.production-main__wrapper .item--main .unactive').removeClass('unactive');
+
+      // добавляем класс для показа модалки
+      modal.addClass('item__modal--show-modal');
+    }
   }
 }
 
 const prodModalClose = () => {
-  $('.production-main__wrapper .item--main .item__modal').removeClass('item__modal--show').removeAttr('style');
+  console.log('close');
+  $('.production-main__wrapper .item--main .item__modal').removeClass('item__modal--show').removeClass('item__modal--show-modal').removeAttr('style');
   $('.production-main__wrapper .item--main').removeAttr('style');
   $('.production-main__wrapper .item--main picture.item').addClass('unactive').removeAttr('style');
+  $('body').css('overflow', 'visible');
 };
 
 export {prodModalOpen, prodModalClose};

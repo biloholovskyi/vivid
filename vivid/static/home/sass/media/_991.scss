@@ -287,4 +287,50 @@
     padding: 48px 0;
   }
   // page restaurant end
+
+  // production bottle
+  .production-main {
+    overflow: hidden;
+  }
+
+  .production-main__wrapper {
+    overflow-x: auto;
+    height: max-content;
+    padding-bottom: 70px;
+
+    &::-webkit-scrollbar {
+      width: 90%;
+      height: 2px;
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #EF3E42;
+    }
+
+    .item {
+      margin-right: 34px;
+
+      &:hover {
+        .unactive {
+          img {
+            transform: translateY(0);
+          }
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      picture.item {
+        max-height: 351.58px;
+      }
+
+      img {
+        max-height: 351.58px;
+      }
+    }
+  }
+  // production bottle end
 }

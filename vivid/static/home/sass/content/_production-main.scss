@@ -81,6 +81,31 @@
         &--show {
           display: block;
         }
+
+        &--show-modal {
+          display: block;
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          bottom: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          z-index: 25 !important;
+          padding: 200px 16px 32px 16px !important;
+          overflow: auto !important;
+
+          .close {
+            top: 120px;
+            right: auto;
+            left: 16px;
+            background-image: url(../media/icon/arrow-aw.svg);
+          }
+
+          .text-block {
+            max-height: 100%;
+          }
+        }
       }
 
       picture.item,
@@ -109,6 +134,10 @@
         }
       }
     }
+  }
+
+  .production__scroll {
+    display: none;
   }
   
   &__mobile-information {

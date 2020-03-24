@@ -1,0 +1,15 @@
+.production-main__wrapper {
+  .item__modal {
+    width: 500px;
+  }
+
+  .item__modal--show {
+    padding: 56px 22px 56px calc(14px + 50%);
+    right: calc(-500px + 50%);
+  }
+
+  .item__modal--left {
+    padding: 76px calc(64px + 50%) 77px 32px;
+    left: calc(-500px + 50%);
+  }
+}
