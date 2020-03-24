@@ -6,11 +6,11 @@
       и наши менеджеры свяжутся с вами
     </div>
     <div class="block-form">
-      <form>
-        <input type="text" placeholder="Ваше имя">
-        <input type="text" placeholder="Ваш номер телефона">
-        <input type="text" placeholder="Ваш Email">
-        <input type="text" placeholder="Ваш Вопрос (необязательно)">
+      <form method="post" class="email-send">
+        <input type="text" name="name" placeholder="Ваше имя">
+        <input type="text" name="tel" placeholder="Ваш номер телефона" required>
+        <input type="text" name="email" placeholder="Ваш Email">
+        <input type="text" name="question" placeholder="Ваш Вопрос (необязательно)">
         <button class="red-button" type="submit">Отправить</button>
         <div class="checkbox-wrapper">
           <div class="political-check__text">Нажимая кнопку "отправить", вы соглашаетесь с <a href="/media/{{pdf}}" target="_blank">политикой обработки данных</a></div>

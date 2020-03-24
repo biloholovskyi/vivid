@@ -59,12 +59,13 @@
         и наши менеджеры свяжутся с вами</div>
     </div>
     <div class="right">
-      <form id="vac-profile-form">
-        <input type="text" placeholder="Ваше имя">
-        <input type="text" placeholder="Ваш номер телефона">
-        <input type="email" placeholder="Ваш Email">
+      <form id="vac-profile-form" enctype="multipart/form-data" method="post">
+        <input type="text" name="name" placeholder="Ваше имя">
+        <input type="text" name="tel" placeholder="Ваш номер телефона" required>
+        <input type="email" name="email" placeholder="Ваш Email">
+        <input type="file" name="attachment" id="file-resume">
         <div class="button-wrapper">
-          <div class="red-button resume">Прикрепить резюме</div>
+          <label  for="file-resume" class="red-button resume">Прикрепить резюме</label>
           <button class="red-button" type="submit">Отправить</button>
         </div>
         <div class="desc-wrapper">

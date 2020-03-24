@@ -55,6 +55,45 @@ $(document).ready(function() {
   }
 
   $(".header__menu, .menu__close").on("click", menu);
+
+  $('.email-send').on('submit', function (e) {
+    e.preventDefault();
+    $.ajax({
+      url: '/static/home/php/main-email.php',
+      type: 'POST',
+      data: $(this).serialize(),
+      success: function( data ) {
+        $('.modal-alert').fadeIn('slow').css('display', 'flex');
+        $('input[type="text"], input[type="password"], input[type="tel"], input[type="email"], input[type="file"], textarea').val('');
+        setTimeout(function () {
+          $('.modal-alert').fadeOut('slow');
+        }, 2000)
+      }
+    });
+  });
+});
+
+$(function() {
+  document.getElementById('vac-profile-form').addEventListener('submit', function(evt) {
+    var http = new XMLHttpRequest(), f = this;
+    var th = $(this);
+    evt.preventDefault();
+    http.open("POST", "/static/home/php/career-email.php", true);
+    http.onreadystatechange = function() {
+      if (http.readyState == 4 && http.status == 200) {
+        $('.modal-alert').fadeIn('slow').css('display', 'flex');
+        $('input[type="text"], input[type="password"], input[type="tel"], input[type="email"], input[type="file"], textarea').val('');
+        setTimeout(function () {
+          $('.modal-alert').fadeOut('slow');
+        }, 2000)
+      }
+    };
+    http.onerror = function() {
+      alert('Ошибка, попробуйте еще раз');
+    };
+    http.send(new FormData(f));
+  }, false);
+
 });
 
 $(window).resize(function () {

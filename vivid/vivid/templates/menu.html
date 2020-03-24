@@ -36,11 +36,11 @@
             {% endfor %}
             <div class="block-form">
               <h3 class="main-title">Напишите нам</h3>
-              <form>
-                <input type="text" placeholder="Ваше имя">
-                <input type="text" placeholder="Ваш номер телефона">
-                <input type="text" placeholder="Ваш Email (необязательно)">
-                <input type="text" placeholder="Ваш Вопрос">
+              <form class="block-form" method="post">
+                <input type="text" name="name" placeholder="Ваше имя">
+                <input type="text" name="tel" placeholder="Ваш номер телефона">
+                <input type="text" name="email" placeholder="Ваш Email (необязательно)">
+                <input type="text" name="question" placeholder="Ваш Вопрос">
                 <button class="red-button" type="submit">Отправить</button>
                 <div class="checkbox-wrapper">
                   <div class="political-check__text">Нажимая кнопку "отправить", вы соглашаетесь с <a href="/media/{{pdf}}" target="_blank">политикой обработки данных</a></div>
